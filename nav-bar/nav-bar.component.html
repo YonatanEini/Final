@@ -1,0 +1,19 @@
+<aside>
+    <ng-template [ngIf]="this.aircraftName.length != 0"> 
+    <div class="dropdown">
+        <br>
+        <h2 class="title-design">Decoded <br> Message <br>Service </h2>
+        <hr>
+        <div class="dropdown-content" >
+            <ng-template ngFor let-item [ngForOf]="aircraftName" let-i="index" [ngClass]="aircraftName[0]">
+                <app-card [name] = "aircraftName[i]"></app-card>
+              </ng-template>
+        </div>
+    </div>
+    </ng-template>
+</aside>
+<ng-template [ngIf]="this.aircraftName.length == 0 || IsLoading">
+    <app-loading-screen></app-loading-screen>
+</ng-template>
+<router-outlet></router-outlet>
+

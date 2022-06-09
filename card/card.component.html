@@ -1,0 +1,33 @@
+<html>
+    <ng-template [ngIf]="!isLoading"> 
+        <div class="card-container">
+            <div class="card">
+                <ng-template [ngIf]="IsDecoding == true"> 
+                    <div class="decoding-icon">
+                    </div>
+                </ng-template>
+                {{name}}
+                <div class="icon-container"> 
+                    <div class="icon">
+                        <button  [routerLink]="['/DecodedFrameProducer/form' , name]"  clic mat-icon-button color="accent">
+                            <mat-icon [ngStyle]="{'color':'red'}" [inline]="true">mode_edit</mat-icon></button>
+                    </div>
+                <div class="icon">
+                    <button (click) =callPostCancelRequest() mat-icon-button color="accent">
+                        <mat-icon [ngStyle]="{'color':'red'}" [inline]="true">pause</mat-icon>
+                    </button>
+                </div>
+                <div  class="icon">
+                    <button (click) = "callpostRequest()"  mat-icon-button color="accent">
+                        <mat-icon [ngStyle]="{'color':'red'}" [inline]="true">play_arrow</mat-icon></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </ng-template>
+    <ng-template [ngIf]="isLoading">
+        <h1>Loading Data...</h1>
+    </ng-template>
+</html>
+
+

@@ -1,0 +1,269 @@
+<ng-template [ngIf]="this.service.showcards"> 
+<html>
+<body>
+<div class="card-container">
+    <ng-template [ngIf]="showMongo==true && showUdp==true && showHttp==true"> 
+      <div class="MongoDBcard">
+    <img src="assets\MongoDBPic.png" width="20px" height="10px" alt="MongoImage">
+    <h3>MongoDB Client</h3>
+    <p>The MongoDB Client is a DataBase,<br> click the + Button to edit properties<br> and create MongoDB client.<br><br> Save your decoded Frames into DataBase!</p>
+    <button  (click) = "hideMongo()" class="icon">
+      <mat-icon  [inline]="true">add_circle</mat-icon></button>
+    </div>
+  </ng-template>
+<ng-template [ngIf]="showUdp==true && showHttp==true && showMongo==true">
+<div class="UdpCard">
+  <img src="assets\udpPicture.png" width="10px" height="5px" alt="UDPImage">
+  <h3>Udp Client</h3>
+  <p>Udp is a communication type,<br> you can open multiple<br> UDP clients and to<br> send the decoded Frames to the<br> clients, click the + button to edit<br> properties and create the UDP clients</p>
+  <button (click) = "hideUdp()" class="icon">
+    <mat-icon  [inline]="true">add_circle</mat-icon></button>
+</div>
+</ng-template>
+
+<ng-template [ngIf]="showHttp==true && showMongo==true && showUdp==true">
+  <div class="card3">
+    <img src="assets\HTTP_logo.png" width="10px" height="10x" alt="HTTP_logo">
+    <h3>Http Client</h3>
+    <p>Click the + button to edit properties<br> and create Http clients<br><br>send your decoded Frames to Http Client</p>
+    <button (click) = "hideHttp()" class="icon">
+      <mat-icon  [inline]="true">add_circle</mat-icon></button>
+  </div>
+</ng-template>
+
+<ng-template [ngIf]="showHttp==true && showMongo==true && showUdp==true">
+  <div>
+    <button class="save-button" (click) = "clientPropertiesBtnClick()">
+      check clients properties!
+    </button>
+  </div>
+</ng-template>
+  <div class="footer">
+  <ng-template  [ngIf]="!showMongo && showHttp==true && showUdp==true">
+  <div class="data-holder">
+    <div class="exit_Btn">
+      <button (click) = "ExitMongoDataHolder()"  type="button" > 
+          <mat-icon >close</mat-icon>
+      </button>
+    </div>
+    <h3>MongoDB Client</h3>
+      <div class="FormContainer">
+        <div class="input-container">
+          <input type="number" [(ngModel)]= "MongoclientProps.port" required="" (change) = "portNumberChange($event)" />
+          <label id="number_label">Port Number: </label>		
+        </div>
+        <div class="input-container">		
+          <input type="text" [(ngModel)]= "MongoclientProps.Ip" required="" (change) = "IPAdressChange($event)"/>
+          <label>Ip Address: </label>
+        </div>
+        <div class="input-container">
+          <input type="text" [(ngModel)]= "MongoclientProps.DataBaseName" required="" (change) = "DataBaseNameChange($event)"/>
+          <label>DataBase Name: </label>		
+        </div>
+        <div class="input-container">		
+          <input type="text" [(ngModel)]= "MongoclientProps.CollectionName" required="" (change) = "CollectionNameChange($event)"/>
+          <label>Collection Name: </label>
+        </div>
+        <div class="input-container">		
+          <label>Communication Type Data: </label>
+        </div>
+        <br>
+        <div class="check-box">
+          <article class="feature1">
+            <input type="checkbox" id="feature1" value="0" (change)="MongoCommunicationTypeCheckBox($event)"/>
+            <div>
+              <span>
+                FlightBoxUp
+              </span>
+            </div>
+          </article>
+          <article class="feature2">
+            <input type="checkbox" id="feature2" value="1" (change)="MongoCommunicationTypeCheckBox($event)"/>
+            <div>
+              <span>
+                FlightBoxDown
+              </span>
+            </div>
+          </article>
+          <article class="feature3">
+            <input type="checkbox" id="feature3" value="2" (change)="MongoCommunicationTypeCheckBox($event)"/>
+            <div>
+              <span>
+                FiberBoxUp
+              </span>
+            </div>
+          </article>
+          <div class="second-row">
+            <article class="feature4">
+              <input type="checkbox" id="feature4" value="3" (change)="MongoCommunicationTypeCheckBox($event)"/>
+              <div>
+                <span>
+                  FiberBoxDown
+                </span>
+              </div>
+            </article>
+            <article class="feature5">
+              <input type="checkbox" id="feature5" value="4" (change)="MongoCommunicationTypeCheckBox($event)"/>
+              <div>
+                <span>
+                  LandingBox
+                </span>
+              </div>
+            </article>
+          </div>
+          </div> 
+          </div>
+          <button  (click) = "startMongoClient()" class="icon">
+            <mat-icon  [inline]="true">add_circle</mat-icon></button>
+  </div>
+</ng-template>
+<ng-template [ngIf]="showMongo==true && showHttp==true && !showUdp">
+<div class="udp-data-holder">
+  <div class="exit_Btn">
+    <button (click) = "ExitUdpDataHolder()"  type="button" > 
+        <mat-icon >close</mat-icon>
+    </button>
+  </div>
+  <h3>Udp Client</h3>
+  <div class="FormContainer">
+    <div class="input-container">
+      <input type="number" [(ngModel)]= "UdpClien.port" required="" (change) = "UdpPortNumberChange($event)" />
+      <label id="number_label_udp">Port Number: </label>		
+    </div>
+    <div class="input-container">		
+      <input type="text" [(ngModel)]= "UdpClien.Ip" required="" (change) = "UdpIPAdressChange($event)"/>
+      <label>Ip Address: </label>
+    </div>
+    <div class="input-container">		
+      <label>Communication Type Data: </label>
+      <br>
+      <article class="feature1">
+        <input type="checkbox" id="feature1" value="0" (change)="UdpCommunicationTypeCheckBox($event)"/>
+        <div>
+          <span>
+            FlightBoxUp
+          </span>
+        </div>
+      </article>
+      <article class="feature2">
+        <input type="checkbox" id="feature2" value="1" (change)="UdpCommunicationTypeCheckBox($event)" />
+        <div>
+          <span>
+            FlightBoxDown
+          </span>
+        </div>
+      </article>
+      <article class="feature3">
+        <input type="checkbox" id="feature3" value="2" (change)="UdpCommunicationTypeCheckBox($event)"/>
+        <div>
+          <span>
+            FiberBoxUp
+          </span>
+        </div>
+      </article>
+      <div class="second-row">
+        <article class="feature4">
+          <input type="checkbox" id="feature4" value="3" (change)="UdpCommunicationTypeCheckBox($event)"/>
+          <div>
+            <span>
+              FiberBoxDown
+            </span>
+          </div>
+        </article>
+        <article class="feature5">
+          <input type="checkbox" id="feature5" value="4" (change)="UdpCommunicationTypeCheckBox($event)"/>
+          <div>
+            <span>
+              LandingBox
+            </span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+    <div class="udp-data-holderBtn">
+      <button (click) = "startUdpClient()" class="icon">
+        <mat-icon  [inline]="true">add_circle</mat-icon></button>
+    </div>
+</div>
+</ng-template>
+<ng-template [ngIf]="showMongo==true && !showHttp && showUdp==true">
+  <div class="http-data-holder">
+    <div class="exit_Btn">
+      <button (click) = "ExitHttpDataHolder()"  type="button" > 
+          <mat-icon >close</mat-icon>
+      </button>
+    </div>
+  <h3>Http Client</h3>
+  <div class="FormContainer">
+    <div class="input-container">
+      <input type="number" [(ngModel)]= "HttpClientProps.port" required="" (change) = "HttpPortNumberChange($event)" />
+      <label id="number_label_http">Port Number: </label>		
+    </div>
+    <div class="input-container">		
+      <input type="text" [(ngModel)]= "HttpClientProps.Ip" required="" (change) = "HttpIPAdressChange($event)"/>
+      <label>Ip Address: </label>
+    </div>
+    <div class="input-container">		
+      <label>Communication Type Data: </label>
+      <br>
+      <article class="feature1">
+        <input type="checkbox" id="feature1" value="0" (change)="HttpCommunicationTypeCheckBox($event)"/>
+        <div>
+          <span>
+            FlightBoxUp
+          </span>
+        </div>
+      </article>
+      <article class="feature2">
+        <input type="checkbox" id="feature2" value="1" (change)="HttpCommunicationTypeCheckBox($event)" />
+        <div>
+          <span>
+            FlightBoxDown
+          </span>
+        </div>
+      </article>
+      <article class="feature3">
+        <input type="checkbox" id="feature3" value="2" (change)="HttpCommunicationTypeCheckBox($event)"/>
+        <div>
+          <span>
+            FiberBoxUp
+          </span>
+        </div>
+      </article>
+      <div class="second-row">
+        <article class="feature4">
+          <input type="checkbox" id="feature4" value="3" (change)="HttpCommunicationTypeCheckBox($event)"/>
+          <div>
+            <span>
+              FiberBoxDown
+            </span>
+          </div>
+        </article>
+        <article class="feature5">
+          <input type="checkbox" id="feature5" value="4" (change)="HttpCommunicationTypeCheckBox($event)"/>
+          <div>
+            <span>
+              LandingBox
+            </span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+  <div class="http-data-holderBtn">
+  <button (click) = "startHttpClient()" class="icon">
+    <mat-icon  [inline]="true">add_circle</mat-icon></button>
+  </div>
+</div>
+</ng-template>
+
+</div>
+</div>
+</body>
+</html>
+</ng-template>
+<ng-template [ngIf]="!this.service.showcards">
+  <app-consumers-table> </app-consumers-table>
+</ng-template>
+<router-outlet></router-outlet>

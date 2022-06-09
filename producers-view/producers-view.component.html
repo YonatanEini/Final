@@ -1,0 +1,215 @@
+
+<div class="job" style="font-family: Poppins, sans-serif;">
+   
+
+    <div class="wrapper">
+      <div class ="detail-page"  >
+     <div class="main-container">
+      <div class="search-type">
+
+      </div>
+      <div class="searched-jobs">
+       <div class="searched-bar">
+        <div class="searched-show">Connect Clients!</div>
+       </div>
+      
+
+
+
+        <!--Verrtical Cards-->
+       <div  class="job-overview">
+        <div class="job-overview-cards">
+         <div  class="job-overview-card" (click) = "SwitchScreen(0)">
+          <div  class="job-card overview-card" [class.selectedCrad]="this.SelctedIndex==0">
+            <ng-template [ngIf] = "checkIfOnDecoding(this.ProducersTypes[0]) == true">
+                <div class="pulse-green">
+                    <p style="margin-left: 25px; margin-top: -3px;">Active</p> 
+               </div>
+            </ng-template>
+           <div class="overview-wrapper" >
+               
+            <img style="width: 50px; height: 50px;"  src="assets\sending.png?raw=true">
+
+            <div class="overview-detail">
+             <div style="margin-left: 38px;" class="job-card-title">{{ProducersTypes[0]}}</div>
+             
+             <div class="job-card-subtitle">
+             </div>
+            </div>
+            
+           </div>
+           
+           <div  class="job-overview-buttons" style="margin: 10px;" >
+          
+            <div  class="button-test">
+                <button (click) ="callpostRequest(this.ProducersTypes[0], 0)" >
+                    <mat-icon  >play_arrow</mat-icon>
+                </button>               
+                 <button (click)="callPostCancelRequest(this.ProducersTypes[0], 0)" >
+                    <mat-icon >pause</mat-icon>
+                </button>              
+                  <button (click) = "SwitchScreen(0)" >
+                    <mat-icon>mode_edit</mat-icon>
+                </button>          
+              </div>
+           </div>
+          </div>
+         </div>
+
+         <div class="job-overview-card " (click) = "SwitchScreen(1)" >
+          <div class="job-card overview-card "  [class.selectedCrad]="this.SelctedIndex==1" >
+            <ng-template [ngIf] = "checkIfOnDecoding(this.ProducersTypes[1]) == true">
+                <div class="pulse-green">
+                    <p style="margin-left: 25px; margin-top: -3px;">Active</p> 
+               </div>
+            </ng-template>
+           <div class="overview-wrapper">
+            <img style="width: 50px; height: 50px;"  src="assets\send.png?raw=true">
+
+            <div class="overview-detail">
+             <div style="margin-left: 45px;" class="job-card-title">{{ProducersTypes[1]}}</div>
+             <div class="job-card-subtitle">
+             </div>
+            </div>
+            
+           </div>
+           <div   class="job-overview-buttons">
+            <div class="job-overview-buttons" style="margin: 10px;" >
+          
+                <button (click) ="callpostRequest(this.ProducersTypes[1], 1)" >
+                    <mat-icon >play_arrow</mat-icon>
+                </button>                
+                <button (click)="callPostCancelRequest(this.ProducersTypes[1], 1)" >
+                    <mat-icon >pause</mat-icon>
+                </button>                
+                <button  (click) = "SwitchScreen(1)" >
+                    <mat-icon>mode_edit</mat-icon></button>   
+               </div>
+            
+           </div>
+          </div>
+         </div>
+         <div class="job-overview-card" (click) = "SwitchScreen(2)" >
+            <div class="job-overview-card">
+                <div class="job-card overview-card"  [class.selectedCrad]="this.SelctedIndex==2">
+                    <ng-template [ngIf] = "checkIfOnDecoding(this.ProducersTypes[2]) == true">
+                        <div class="pulse-green">
+                            <p style="margin-left: 25px; margin-top: -3px;">Active</p> 
+                       </div>
+                    </ng-template>
+                 <div class="overview-wrapper">
+                  <img style="width: 50px; height: 50px;"  src="assets\fast.png?raw=true">
+      
+                  <div class="overview-detail">
+                   <div style="margin-left: 38px;" class="job-card-title">{{ProducersTypes[2]}}</div>
+                   <div class="job-card-subtitle">
+                   </div>
+                  </div>
+                
+                 </div>
+                 <div class="job-overview-buttons"  style="margin: 10px;">
+                    <button (click) ="callpostRequest(this.ProducersTypes[2], 2)" >
+                        <mat-icon >play_arrow</mat-icon>
+                    </button>               
+                     <button (click)="callPostCancelRequest(this.ProducersTypes[2], 2)" >
+                        <mat-icon >pause</mat-icon>
+                    </button>                
+                    <button (click) = "SwitchScreen(2)" >
+                        <mat-icon  >mode_edit</mat-icon></button>
+                  
+                 </div>
+                </div>
+               </div>
+         </div>
+
+         <div class="job-overview-card" (click) = "SwitchScreen(3)" >
+            <div class="job-overview-card">
+                <div class="job-card overview-card"  [class.selectedCrad]="this.SelctedIndex==3"> 
+                    <ng-template [ngIf] = "checkIfOnDecoding(this.ProducersTypes[3]) == true">
+                        <div class="pulse-green">
+                            <p style="margin-left: 25px; margin-top: -3px;">Active</p> 
+                       </div>
+                    </ng-template>
+                 <div class="overview-wrapper">
+                  <img style="width: 50px; height: 50px;"  src="assets\right-arrow.png?raw=true">
+      
+                  <div class="overview-detail">
+                   <div style="margin-left: 47px;" class="job-card-title">{{ProducersTypes[3]}}</div>
+                   <div class="job-card-subtitle">
+                   </div>
+                  </div>
+                
+                 </div>
+                 <div class="job-overview-buttons"  style="margin: 10px;">
+                    <button (click) ="callpostRequest(this.ProducersTypes[3], 3)" >
+                        <mat-icon >play_arrow</mat-icon>
+                    </button>               
+                     <button  (click)="callPostCancelRequest(this.ProducersTypes[3], 3)"  >
+                        <mat-icon >pause</mat-icon>
+                    </button>                <button (click) = "SwitchScreen(3)"  >
+                        <mat-icon >mode_edit</mat-icon></button>
+                  
+                 </div>
+                </div>
+               </div>
+         </div>
+
+         <div class="job-overview-card" (click) = "SwitchScreen(4)">
+            <div  class="job-card overview-card"  [class.selectedCrad]="this.SelctedIndex==4">
+                <ng-template [ngIf] = "checkIfOnDecoding(this.ProducersTypes[4]) == true">
+                    <div class="pulse-green">
+                        <p style="margin-left: 25px; margin-top: -3px;">Active</p> 
+                   </div>
+                </ng-template>
+                <div class="overview-wrapper">
+                    <img style="width: 50px; height: 50px;"  src="assets\sendIcon.png?raw=true">
+        
+                    <div class="overview-detail">
+                     <div style="margin-left: 47px;" class="job-card-title">{{ProducersTypes[4]}}</div>
+                     <div class="job-card-subtitle">
+                     </div>
+                    </div>
+                  
+                   </div>
+                   <div class="job-overview-buttons"  style="margin: 10px;">
+                      <button  (click) ="callpostRequest(this.ProducersTypes[4], 4)" >
+                          <mat-icon >play_arrow</mat-icon>
+                      </button>            
+                          <button  (click)="callPostCancelRequest(this.ProducersTypes[4], 4)"  >
+                          <mat-icon >pause</mat-icon>
+                      </button>                
+                      <button  (click) = "SwitchScreen(4)" >
+                          <mat-icon >mode_edit</mat-icon></button>
+                    
+                   </div>
+            </div>
+           </div>      
+        </div>
+
+
+    <ng-template [ngIf] = "this.SelctedIndex == 0">
+        <app-fill-properties-view  [ProducerName] = "ProducersTypes[0]" [Index] = 0> </app-fill-properties-view>
+    </ng-template>       
+    
+    <ng-template [ngIf] = "this.SelctedIndex == 1">
+        <app-fill-properties-view  [ProducerName] = "ProducersTypes[1]" [Index] = 1> </app-fill-properties-view>
+    </ng-template>   
+    
+    <ng-template [ngIf] = "this.SelctedIndex == 2">
+        <app-fill-properties-view  [ProducerName] = "ProducersTypes[2]" [Index] = 2> </app-fill-properties-view>
+    </ng-template>   
+    
+    <ng-template [ngIf] = "this.SelctedIndex == 3">
+        <app-fill-properties-view  [ProducerName] = "ProducersTypes[3]" [Index] = 3> </app-fill-properties-view>
+    </ng-template>   
+    
+    <ng-template [ngIf] = "this.SelctedIndex == 4">
+        <app-fill-properties-view  [ProducerName] = "ProducersTypes[4]" [Index] = 4> </app-fill-properties-view>
+    </ng-template>   
+                    
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>

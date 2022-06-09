@@ -1,0 +1,321 @@
+<html>
+
+    <body>
+<div class="bg">
+<div class="center">
+  <div >
+    <div class="card">
+      <div class="additional" style="background: #202831;">
+        <div class="user-card">
+          <ng-template [ngIf] = "checkIfOnDecoding(this.aircraftName[0]) == true">
+          <div class="banner-icon">
+            <p>produce</p>
+            <div class="decoding-icon">
+            </div>
+          </div>
+        </ng-template>
+          <svg width="110" height="58" viewBox="0 0 250 250" role="img" aria-labelledby="title desc" class="center">         
+          </svg>
+        </div>
+        <div class="more-info" style="margin-left:-50px">
+          <h1>Current State</h1>
+          <div class="coords" style="margin-top: 15px;">
+            <span>Producer Situation</span>
+            <span>{{ProducerStatues[0].currentStatus}}</span>
+          </div>
+          <div class="coords" style="margin-right: 55px;">
+            <span>Transimission Rate</span>
+            <span>{{ProducerStatues[0].TransimsissionRate}}</span>
+          </div>
+          <div class="coords" style="margin-right: 55px;">
+            <span>Downlink/Uplink</span>
+            <span>{{ProducerStatues[0].Type}}</span>
+          </div>
+          <div class="coords" style="margin-right: 55px;">
+            <span>Latest Update</span>
+            <span>{{ProducerStatues[0].UpdatedTime}}</span>
+          </div>
+          <div class="icon-container" > 
+            <div class="icon">
+                <button  [routerLink]="['/AnalyzedData/form' , this.aircraftName[0]]"  clic mat-icon-button color="accent">
+                    <mat-icon [ngStyle]="{'color':'black', 'font-size' : '20px'}" [inline]="true">mode_edit</mat-icon></button>
+            </div>
+        <div class="icon">
+            <button (click)="callPostCancelRequest(this.aircraftName[0])" mat-icon-button color="accent">
+                <mat-icon [ngStyle]="{'color':'black', 'font-size' : '20px'}" [inline]="true">pause</mat-icon>
+            </button>
+        </div>
+        <div  class="icon">
+            <button (click) ="callpostRequest(this.aircraftName[0])"  mat-icon-button color="accent">
+                <mat-icon  [ngStyle]="{'color':'black', 'font-size' : '20px'}" [inline]="true">play_arrow</mat-icon></button>
+        </div>
+    </div>
+
+        
+        </div>
+        
+      </div>
+      <div class="general">
+       
+        <h1>{{this.aircraftName[0]}}</h1>
+        <p>Fiber Box Down Producer.
+            Produce To Apache-Kafka FiberBoxDown Decoded Frame. Hoover To Edit Properties, To Check Producer Current Situation Or To Activate Producer Actions.</p>
+        <span class="more">Mouse over the card for more info</span>
+       
+      </div>
+    </div>
+  </div>
+    <div >
+    <div class="card">
+        <div class="additional" style="background:#1E1E1E">
+          <div class="user-card">
+            <ng-template [ngIf] = "checkIfOnDecoding(this.aircraftName[1]) == true">
+              <div class="banner-icon">
+                <p>produce</p>
+                <div class="decoding-icon">
+                </div>
+              </div>
+            </ng-template>
+            <svg width="110" height="58" viewBox="0 0 250 250" role="img" aria-labelledby="title desc" class="center">         
+            </svg>
+          </div>
+          <div class="more-info">
+            <h1>Current State</h1>
+            <div class="coords" style="margin-top: 15px;">
+              <span>Producer Situation</span>
+              <span>{{ProducerStatues[1].currentStatus}}</span>
+            </div>
+            <div class="coords" style="margin-right: 55px;">
+              <span>Transimission Rate</span>
+              <span>{{ProducerStatues[1].TransimsissionRate}}
+            </span>
+            </div>
+            <div class="coords" style="margin-right: 55px;">
+              <span>Downlink/Uplink</span>
+              <span>{{ProducerStatues[1].Type}}
+            </span>
+            </div>
+            <div class="coords" style="margin-right: 55px;">
+              <span>Latest Update</span>
+              <span>{{ProducerStatues[1].UpdatedTime}}</span>
+            </div>
+            <div class="icon-container" > 
+              <div class="icon">
+                  <button   [routerLink]="['/AnalyzedData/form' , this.aircraftName[1]]"  clic mat-icon-button color="accent">
+                      <mat-icon [ngStyle]="{'color':'black', 'font-size' : '20px'}" [inline]="true">mode_edit</mat-icon></button>
+              </div>
+          <div class="icon">
+              <button  (click)="callPostCancelRequest(this.aircraftName[1])"  mat-icon-button color="accent">
+                  <mat-icon [ngStyle]="{'color':'black', 'font-size' : '20px'}" [inline]="true">pause</mat-icon>
+              </button>
+          </div>
+          <div  class="icon">
+              <button (click) ="callpostRequest(this.aircraftName[1])" mat-icon-button color="accent">
+                  <mat-icon [ngStyle]="{'color':'black', 'font-size' : '20px'}" [inline]="true">play_arrow</mat-icon></button>
+          </div>
+      </div>
+  
+          
+          </div>
+          
+        </div>
+        <div class="general">
+          <h1>{{this.aircraftName[1]}}</h1>
+          <p>Fiber Box Up Producer.
+            Produce To Apache-Kafka FiberBoxUp Decoded Frame. Hoover To Edit Properties, To Check Producer Current Situation Or To Activate Producer Actions.</p>          <span class="more">Mouse over the card for more info</span>
+        </div>
+      </div>
+      </div>
+      <div  class="card">
+        <div class="additional" style="background:#1E3834;">
+          <div class="user-card">
+            <ng-template [ngIf] = "checkIfOnDecoding(this.aircraftName[2]) == true">
+              <div class="banner-icon">
+                <p>produce</p>
+                <div class="decoding-icon">
+                </div>
+              </div>
+            </ng-template>
+            <svg width="110" height="58" viewBox="0 0 250 250" role="img" aria-labelledby="title desc" class="center">         
+            </svg>
+          </div>
+          <div class="more-info">
+            <h1>Current State</h1>
+            <div class="coords" style="margin-top: 15px;">
+              <span>Producer Situation</span>
+              <span>{{ProducerStatues[2].currentStatus}}
+            </span>
+            </div>
+            <div class="coords" style="margin-right: 55px;">
+              <span>Transimission Rate</span>
+              <span>{{ProducerStatues[2].TransimsissionRate}}
+            </span>
+            </div>
+            <div class="coords" style="margin-right: 55px;">
+              <span>Downlink/Uplink</span>
+              <span>{{ProducerStatues[2].Type}}
+            </span>
+            </div>
+            <div class="coords" style="margin-right: 55px;">
+              <span>Latest Update</span>
+              <span>{{ProducerStatues[2].UpdatedTime}}</span>
+            </div>
+            <div class="icon-container" > 
+              <div class="icon">
+                  <button   [routerLink]="['/AnalyzedData/form' , this.aircraftName[2]]"  clic mat-icon-button color="accent">
+                      <mat-icon [ngStyle]="{'color':'black', 'font-size' : '20px'}" [inline]="true">mode_edit</mat-icon></button>
+              </div>
+          <div class="icon">
+              <button  (click)="callPostCancelRequest(this.aircraftName[2])" mat-icon-button color="accent">
+                  <mat-icon [ngStyle]="{'color':'black', 'font-size' : '20px'}" [inline]="true">pause</mat-icon>
+              </button>
+          </div>
+          <div  class="icon">
+              <button (click) ="callpostRequest(this.aircraftName[2])" mat-icon-button color="accent">
+                  <mat-icon [ngStyle]="{'color':'black', 'font-size' : '20px'}" [inline]="true">play_arrow</mat-icon></button>
+          </div>
+      </div>
+  
+          
+          </div>
+          
+        </div>
+        
+        <div class="general">
+          <h1>{{this.aircraftName[2]}}</h1>
+          <p>Flight Box Down Producer.
+            Produce To Apache-Kafka FlightBoxDown Decoded Frame. Hoover To Edit Properties, To Check Producer Current Situation Or To Activate Producer Actions.</p>          <span class="more">Mouse over the card for more info</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="additional" style="background:#28402D;">
+          <div class="user-card">
+            <ng-template [ngIf] = "checkIfOnDecoding(this.aircraftName[3]) == true">
+              <div class="banner-icon">
+                <p>produce</p>
+                <div class="decoding-icon">
+                </div>
+              </div>
+            </ng-template>
+            <svg width="110" height="58" viewBox="0 0 250 250" role="img" aria-labelledby="title desc" class="center">         
+            </svg>
+          </div>
+          <div class="more-info">
+            <h1>Current State</h1>
+            <div class="coords" style="margin-top: 15px;">
+              <span>Producer Situation</span>
+              <span>{{ProducerStatues[3].currentStatus}}
+            </span>
+            </div>
+            <div class="coords" style="margin-right: 55px;">
+              <span>Transimission Rate</span>
+              <span>{{ProducerStatues[3].TransimsissionRate}}
+            </span>
+            </div>
+            <div class="coords" style="margin-right: 55px;">
+              <span>Downlink/Uplink</span>
+              <span>{{ProducerStatues[3].Type}}
+            </span>
+            </div>
+            <div class="coords" style="margin-right: 55px;">
+              <span>Latest Update</span>
+              <span>{{ProducerStatues[3].UpdatedTime}}</span>
+            </div>
+            <div class="icon-container" > 
+              <div class="icon">
+                  <button   [routerLink]="['/AnalyzedData/form' , this.aircraftName[3]]"  clic mat-icon-button color="accent">
+                      <mat-icon [ngStyle]="{'color':'black', 'font-size' : '20px'}" [inline]="true">mode_edit</mat-icon></button>
+              </div>
+          <div class="icon">
+              <button  (click)="callPostCancelRequest(this.aircraftName[3])" mat-icon-button color="accent">
+                  <mat-icon [ngStyle]="{'color':'black', 'font-size' : '20px'}" [inline]="true">pause</mat-icon>
+              </button>
+          </div>
+          <div  class="icon">
+              <button (click) ="callpostRequest(this.aircraftName[3])" mat-icon-button color="accent">
+                  <mat-icon [ngStyle]="{'color':'black', 'font-size' : '20px'}" [inline]="true">play_arrow</mat-icon></button>
+          </div>
+      </div>
+  
+          
+          </div>
+          
+        </div>
+
+          
+        <div  class="general">
+          <h1>{{this.aircraftName[3]}}</h1>
+          <p>Flight Box Up Producer.
+            Produce To Apache-Kafka FlightBoxUp Decoded Frame. Hoover To Edit Properties, To Check Producer Current Situation Or To Activate Producer Actions.</p>          <span class="more">Mouse over the card for more info</span>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="additional" style="background:#24332B">
+          <div class="user-card">
+            <ng-template [ngIf] = "checkIfOnDecoding(this.aircraftName[4]) == true">
+              <div class="banner-icon">
+                <p>produce</p>
+                <div class="decoding-icon">
+                </div>
+              </div>
+            </ng-template>
+            <svg width="110" height="58" viewBox="0 0 250 250" role="img" aria-labelledby="title desc" class="center">         
+            </svg>
+          </div>
+          <div class="more-info">
+            <h1>Current State</h1>
+            <div class="coords" style="margin-top: 15px;">
+              <span>Producer Situation</span>
+              <span>{{ProducerStatues[4].currentStatus}}
+                              </span>
+            </div>
+            <div class="coords" style="margin-right: 55px;">
+              <span>Transimission Rate</span>
+              <span>{{ProducerStatues[4].TransimsissionRate}}
+            </span>
+            </div>
+            <div class="coords" style="margin-right: 55px;">
+              <span>Downlink/Uplink</span>
+              <span>{{ProducerStatues[4].Type}}
+            </span>
+            </div>
+            <div class="coords" style="margin-right: 55px;">
+              <span>Latest Update</span>
+              <span>{{ProducerStatues[4].UpdatedTime}}</span>
+            </div>
+            <div class="icon-container" > 
+              <div class="icon">
+                  <button   [routerLink]="['/AnalyzedData/form' , this.aircraftName[4]]"  clic mat-icon-button color="accent">
+                      <mat-icon [ngStyle]="{'color':'black', 'font-size' : '20px'}" [inline]="true">mode_edit</mat-icon></button>
+              </div>
+          <div class="icon">
+              <button  (click)="callPostCancelRequest(this.aircraftName[4])" mat-icon-button color="accent">
+                  <mat-icon [ngStyle]="{'color':'black', 'font-size' : '20px'}" [inline]="true">pause</mat-icon>
+              </button>
+          </div>
+          <div  class="icon">
+              <button (click) ="callpostRequest(this.aircraftName[4])" mat-icon-button color="accent">
+                  <mat-icon  [ngStyle]="{'color':'black', 'font-size' : '20px'}" [inline]="true">play_arrow</mat-icon></button>
+          </div>
+      </div>
+  
+          
+          </div>
+          
+        </div>
+        <div class="general">
+          <h1>{{this.aircraftName[4]}}</h1>
+          <p>Landing Box Producer.
+            Produce To Apache-Kafka LandingBox Decoded Frame. Hoover To Edit Properties, To Check Producer Current Situation Or To Activate Producer Actions.</p>          <span class="more">Mouse over the card for more info</span>
+        </div>
+      </div>
+
+      </div>
+</div>
+</body>
+</html>
+
+<router-outlet></router-outlet>

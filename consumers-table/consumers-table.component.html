@@ -1,0 +1,189 @@
+<body>
+  <div>
+    <p class="line-1 anim-typewriter">View Edit Or Cancel Your Clients!</p>
+  </div>
+<main class="st_viewport">
+  <div class="st_wrap_table" data-table_id="0">
+    <header class="st_table_header">
+      <h2>MongoDB Client Properties</h2>
+      <ng-template [ngIf]="MongoClients.length > 0"> 
+      <div class="st_row">
+        <div class="st_column _rank">Port</div>
+        <div class="st_column _name">Ip</div>
+        <div class="st_column _surname">DataBase Name</div>
+        <div class="st_column _year">Collection Name</div>
+        <div class="st_column _section">Communication listener Types: </div>
+      </div>
+      </ng-template>
+      <ng-template [ngIf]="MongoClients.length == 0"> 
+        <p>You didn't create MongoDB client yet!</p>
+      </ng-template>
+    </header>
+
+    <ng-template ngFor let-item [ngForOf]="MongoClients" let-i="index" >
+    <div class="st_table">
+      <div class="st_row">
+        <button class="icon" (click) = cancelMongoConsumer(MongoClients[i])>
+          <mat-icon  [inline]="true">remove_circle</mat-icon></button>
+        <div class="st_column _rank">{{MongoClients[i].port}}</div>
+        <div class="st_column _name">{{MongoClients[i].Ip}}</div>
+        <div class="st_column _surname">{{MongoClients[i].DataBaseName}}</div>
+        <div class="st_column _year">{{MongoClients[i].CollectionName}}</div>
+        <div class="st_column _section">{{MongoClients[i].ConsumerTopic}}</div>
+      </div>
+    </div>
+  </ng-template>
+
+  </div>
+  <div class="st_wrap_table" data-table_id="1">
+    <header class="st_table_header">
+      <h2>Udp Clients Properties</h2>
+      <ng-template [ngIf]="UdpClients.length > 0"> 
+      <div class="st_row">
+        <div class="st_column _rank">Port</div>
+        <div class="st_column _name">IP</div>
+        <div class="st_column _surname">Communications Type</div>
+      </div>
+    </ng-template>
+    <ng-template [ngIf]="UdpClients.length == 0"> 
+      <p>You didn't create Udp clients yet!</p>
+    </ng-template>
+    </header>
+
+  <ng-template ngFor let-item [ngForOf]="UdpClients" let-i="index" >
+    <div class="st_table">
+      <div class="st_row">
+        <button class="icon" (click) = "cancelUdpConsumer(UdpClients[i])">
+          <mat-icon  [inline]="true">remove_circle</mat-icon></button>
+        <div class="st_column _rank">{{UdpClients[i].port}}</div>
+        <div class="st_column _name">{{UdpClients[i].Ip}}</div>
+        <div class="st_column _surname">{{UdpClients[i].CommunicationTypeAfterConvert}}</div>
+      </div>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="st_wrap_table" data-table_id="3">
+    <header class="st_table_header">
+      <h2>Tcp Clients Properties</h2>
+      <ng-template [ngIf]="TcpClients.length > 0"> 
+      <div class="st_row">
+        <div class="st_column _rank">Port</div>
+        <div class="st_column _name">IP</div>
+        <div class="st_column _surname">Communications Type</div>
+      </div>
+    </ng-template>
+    <ng-template [ngIf]="TcpClients.length == 0"> 
+      <p>You didn't create Tcp clients yet!</p>
+    </ng-template>
+    </header>
+
+  <ng-template ngFor let-item [ngForOf]="TcpClients" let-i="index" >
+    <div class="st_table">
+      <div class="st_row">
+        <button class="icon" (click) = "cancelHttpConsumer(HttpClients[i])">
+          <mat-icon  [inline]="true">remove_circle</mat-icon></button>
+        <div class="st_column _rank">{{TcpClients[i].port}}</div>
+        <div class="st_column _name">{{TcpClients[i].Ip}}</div>
+        <div class="st_column _surname">{{TcpClients[i].CommunicationTypeAfterConvert}}</div>
+      </div>
+      </div>
+    </ng-template>
+  </div>    
+  <div class="st_wrap_table" data-table_id="2">
+    <header class="st_table_header">
+      <h2>Http clients Properties</h2>
+      <ng-template [ngIf]="HttpClients.length > 0"> 
+      <div class="st_row">
+        <div class="st_column _rank">Port</div>
+        <div class="st_column _name">IP</div>
+        <div class="st_column _surname">Communications Type</div>
+      </div>
+    </ng-template>
+    <ng-template [ngIf]="HttpClients.length == 0"> 
+      <p>You didn't create Http clients yet!</p>
+    </ng-template>
+    </header>
+
+  <ng-template ngFor let-item [ngForOf]="HttpClients" let-i="index" >
+    <div class="st_table">
+      <div class="st_row">
+        <button class="icon" (click) = "cancelHttpConsumer(HttpClients[i])">
+          <mat-icon  [inline]="true">remove_circle</mat-icon></button>
+        <div class="st_column _rank">{{HttpClients[i].port}}</div>
+        <div class="st_column _name">{{HttpClients[i].Ip}}</div>
+        <div class="st_column _surname">{{HttpClients[i].CommunicationTypeAfterConvert}}</div>
+      </div>
+      </div>
+    </ng-template>
+  </div>    
+
+
+  <div class="st_wrap_table" data-table_id="4">
+    <header class="st_table_header">
+      <h2>WebSocket Clients Properties</h2>
+      <ng-template [ngIf]="WebSocketClient.length > 0"> 
+      <div class="st_row">
+        <div class="st_column _rank">Port</div>
+        <div class="st_column _name">IP</div>
+        <div class="st_column _surname">Communications Type</div>
+      </div>
+    </ng-template>
+    <ng-template [ngIf]="WebSocketClient.length == 0"> 
+      <p>You didn't create WebSocket clients yet!</p>
+    </ng-template>
+    </header>
+
+  <ng-template ngFor let-item [ngForOf]="WebSocketClient" let-i="index" >
+    <div class="st_table">
+      <div class="st_row">
+        <button class="icon" (click) = "cancelHttpConsumer(HttpClients[i])">
+          <mat-icon  [inline]="true">remove_circle</mat-icon></button>
+        <div class="st_column _rank">{{WebSocketClient[i].port}}</div>
+        <div class="st_column _name">{{WebSocketClient[i].Ip}}</div>
+        <div class="st_column _surname">{{WebSocketClient[i].CommunicationTypeAfterConvert}}</div>
+      </div>
+      </div>
+    </ng-template>
+  </div>    
+
+  <div class="st_wrap_table" data-table_id="5">
+    <header class="st_table_header">
+      <h2>Splunk Clients Properties</h2>
+      <ng-template [ngIf]="SplunkClient.length > 0"> 
+      <div class="st_row">
+        <div class="st_column _rank">Port</div>
+        <div class="st_column _name">IP</div>
+        <div class="st_column _surname">Communications Type</div>
+        <div class="st_column _year">Http Token String</div>
+      </div>
+    </ng-template>
+    <ng-template [ngIf]="SplunkClient.length == 0"> 
+      <p>You didn't create Splunk clients yet!</p>
+    </ng-template>
+    </header>
+
+  <ng-template ngFor let-item [ngForOf]="SplunkClient" let-i="index" >
+    <div class="st_table">
+      <div class="st_row">
+        <button class="icon" (click) = "cancelHttpConsumer(HttpClients[i])">
+          <mat-icon  [inline]="true">remove_circle</mat-icon></button>
+        <div class="st_column _rank">{{SplunkClient[i].port}}</div>
+        <div class="st_column _name">{{SplunkClient[i].Ip}}</div>
+        <div class="st_column _surname">{{SplunkClient[i].CommunicationTypeAfterConvert}}</div>
+        <div class="st_column _year">{{SplunkClient[i].HttpEventCollectorToken}}</div>
+
+      </div>
+      </div>
+    </ng-template>
+  </div>    
+  
+</main>
+<footer>
+</footer>
+<ng-template ngFor let-item [ngForOf]="CancelledRequests" let-i="index" >
+  <div class="cancelled_request">
+    {{CancelledRequests[i]}}
+  </div>
+</ng-template>
+</body>

@@ -1,0 +1,67 @@
+<html>
+    <body>
+        <br>
+        <br>
+        <div class="card">
+            Heighest Height
+            <br>
+            <br>
+            <mat-icon>flight_takeoff</mat-icon>
+            <br>
+            <br>
+            <p>{{heightHeight}}</p>
+        </div>
+        <div class="card">
+            Heights Wind Speed
+            <br>
+            <br>
+            <mat-icon>av_timer</mat-icon>
+            <br>
+            <br>
+            <p>{{heightSpeed}}</p>
+        </div>
+        <div class="card">
+            Total Frames Analyzed
+            <br>
+            <br>
+            <mat-icon>chrome_reader_mode</mat-icon>
+            <br>
+            <br>
+            <p>{{totalFrames}}</p>
+        </div>
+        <div class="secondRowCards">
+            <div class="card">
+                Avergae Height
+                <br>
+                <br>
+                <mat-icon> list_alt</mat-icon>                
+                <br>
+                <br>
+                <p>{{avgHeight}}</p>
+            </div>
+            <div class="card">
+                Avergae Wind Speed
+                <br>
+                <br>
+                <mat-icon> list_alt</mat-icon>       
+                <br>
+                <br>
+                <p>{{avgWindSpeed}}</p>
+            </div>
+        </div>
+        <div class="bg">
+            <div class="chart-container">
+                <div id="divChart">
+                    <canvas id="myChart" ></canvas>
+                </div>
+                <div id="divChart"> 
+                    <canvas id="speed-hour"></canvas>
+            </div>
+        </div>
+        </div>
+        <br>
+        <br>
+    </body>
+</html>
+
+

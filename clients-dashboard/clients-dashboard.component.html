@@ -1,0 +1,326 @@
+
+<div style ="margin-left: 15%;max-width: 95%;">
+    
+    <div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">   
+        <!-- Main content -->
+        <div class="h-screen flex-grow-1 overflow-y-lg-auto">
+            <!-- Main -->
+            <main class="py-6 bg-surface-secondary">
+                <div class="container-fluid">
+                    <!-- Card stats -->
+    
+                    <div class="cardQ shadow border-0 mb-7">
+                        <div class="card-header">
+                            <h5 class="mb-0">Clients Conroller</h5>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-nowrap" >
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Client Type</th>
+                                        <th scope="col">Creation Hour</th>
+                                        <th scope="col">Ip Address</th>
+                                        <th scope="col">Port Number</th>
+                                        <th scope="col">Topics</th>
+                                        <th scope="col">Total Frames</th>
+                                        <th scope="col">Client Status</th>
+
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                
+                                    <ng-template ngFor let-item [ngForOf]="this.service.MongoDBclientList" let-i="index" >
+                                        <tr>
+                                            <td>
+                                                <img alt="..." src="assets\mongoLogo-removebg-preview.png?raw=true" width="30px" height="30px">
+                                                <a class="text-heading font-semibold">
+                                                    MongoDB Client
+                                                </a>
+                                            </td>
+                                            <td>
+                                                {{service.MongoDBclientList[i].CreationDate}}
+                                            </td>
+                                            <td>
+                                                <a class="text-heading font-semibold" href="#">
+                                                    {{service.MongoDBclientList[i].Ip}}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                {{service.MongoDBclientList[i].port}}
+                                            </td>
+                                            <td>
+                                                {{service.MongoDBclientList[i].CommunicationTypeAfterConvert}}
+                                            </td>
+                                            <td>
+                                                {{service.MongoDBclientList[i].Status.TotalFrames}}
+
+                                            </td>
+                                            <td>
+
+                                                <ng-template  [ngIf] = "service.MongoDBclientList[i].Status.Status == 0">
+                                                    <div class="pulse-green">
+                                                        <p style="margin-left: 25px; margin-top: -3px;">Active</p> 
+                                                   </div>
+                                                </ng-template>
+
+                                                <ng-template  [ngIf] = "service.MongoDBclientList[i].Status.Status == 1">
+                                                    <div class="pulse-red">
+                                                        <p style="margin-left: 25px; margin-top: -3px;">Inactive</p> 
+                                                   </div>
+                                                </ng-template>
+
+                                                
+                                            </td>
+                                            <td class="text-end">
+                                                <button (click) = "CancelMongo(service.MongoDBclientList[i])" type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </ng-template>
+
+                                    <ng-template ngFor let-item [ngForOf]="this.service.UdpClientList" let-i="index" >
+                                        <tr>
+                                            <td>
+                                                <img alt="..." src="assets\UdpLogo.png?raw=true" width="30px" height="30px">
+                                                <a class="text-heading font-semibold">
+                                                    Udp Client
+                                                </a>
+                                            </td>
+                                            <td>
+                                                {{service.UdpClientList[i].CreationDate}}
+                                            </td>
+                                            <td>
+                                                <a class="text-heading font-semibold" href="#">
+                                                    {{service.UdpClientList[i].Ip}}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                {{service.UdpClientList[i].port}}
+                                            </td>
+                                            <td>
+                                                {{service.UdpClientList[i].CommunicationTypeAfterConvert}}
+                                            </td>
+                                            <td>
+                                                {{service.UdpClientList[i].Status.TotalFrames}}
+                                            </td>
+                                            <td>
+                                               
+                                                <ng-template  [ngIf] = "service.UdpClientList[i].Status.Status == 0">
+                                                    <div class="pulse-green">
+                                                        <p style="margin-left: 25px; margin-top: -3px;">Active</p> 
+                                                   </div>
+                                                </ng-template>
+
+                                                <ng-template  [ngIf] = "service.UdpClientList[i].Status.Status == 1">
+                                                    <div class="pulse-red">
+                                                        <p style="margin-left: 25px; margin-top: -3px;">Inactive</p> 
+                                                   </div>
+                                                </ng-template>
+
+                                            </td>
+                                            <td class="text-end">
+                                                <button (click) ="CancelUdp(service.UdpClientList[i])" type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </ng-template>
+
+                                    <ng-template ngFor let-item [ngForOf]="this.service.HttpClientList" let-i="index" >
+                                        <tr>
+                                            <td>
+                                                <img alt="..." src="assets\httpLogo-removebg-preview.png?raw=true" width="30px" height="30px">
+                                                <a class="text-heading font-semibold">
+                                                    Http Client
+                                                </a>
+                                            </td>
+                                            <td>
+                                                {{service.HttpClientList[i].CreationDate}}
+                                            </td>
+                                            <td>
+                                                <a class="text-heading font-semibold" href="#">
+                                                    {{service.HttpClientList[i].Ip}}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                {{service.HttpClientList[i].port}}
+                                            </td>
+                                            <td>
+                                                {{service.HttpClientList[i].CommunicationTypeAfterConvert}}
+                                            </td>
+                                            <td>
+                                                {{service.HttpClientList[i].Status.TotalFrames}}
+                                            </td>
+                                            <td>
+                                                  <ng-template  [ngIf] = "service.HttpClientList[i].Status.Status == 0">
+                                                    <div class="pulse-green">
+                                                        <p style="margin-left: 25px; margin-top: -3px;">Active</p> 
+                                                   </div>
+                                                </ng-template>
+
+                                                <ng-template  [ngIf] = "service.HttpClientList[i].Status.Status == 1">
+                                                    <div class="pulse-red">
+                                                        <p style="margin-left: 25px; margin-top: -3px;">Inactive</p> 
+                                                   </div>
+                                                </ng-template>
+
+                                            </td>
+                                            <td class="text-end">
+                                                <button (click) ="CancelHttp(service.HttpClientList[i])" type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </ng-template>
+
+                                    <ng-template ngFor let-item [ngForOf]="this.service.TcpClientList" let-i="index" >
+                                        <tr>
+                                            <td>
+                                                <img alt="..." src="assets\TcpLogo-removebg-preview.png?raw=true" width="30px" height="30px">
+                                                <a class="text-heading font-semibold">
+                                                        Tcp Client
+                                                </a>
+                                            </td>
+                                            <td>
+                                                {{service.TcpClientList[i].CreationDate}}
+                                            </td>
+                                            <td>
+                                                <a class="text-heading font-semibold" href="#">
+                                                    {{service.TcpClientList[i].Ip}}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                {{service.TcpClientList[i].port}}
+                                            </td>
+                                            <td>
+                                                {{service.TcpClientList[i].CommunicationTypeAfterConvert}}
+                                            </td>
+                                            <td>
+                                                {{service.TcpClientList[i].Status.TotalFrames}}
+                                            </td>
+                                            <td>
+                                                  <ng-template  [ngIf] = "service.TcpClientList[i].Status.Status == 0">
+                                                    <div class="pulse-green">
+                                                        <p style="margin-left: 25px; margin-top: -3px;">Active</p> 
+                                                   </div>
+                                                </ng-template>
+
+                                                <ng-template  [ngIf] = "service.TcpClientList[i].Status.Status == 1">
+                                                    <div class="pulse-red">
+                                                        <p style="margin-left: 25px; margin-top: -3px;">Inactive</p> 
+                                                   </div>
+                                                </ng-template>
+                                            </td>
+                                            <td class="text-end">
+                                                <button (click) ="CancelTcp(service.TcpClientList[i])" type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </ng-template>
+
+                                    <ng-template ngFor let-item [ngForOf]="this.service.WebSocketClietList" let-i="index" >
+                                        <tr>
+                                            <td>
+                                                <img alt="..." src="assets\WebSocketLogo-removebg-preview.png?raw=true" width="30px" height="30px">
+                                                <a class="text-heading font-semibold">
+                                                        WebSocket Client
+                                                </a>
+                                            </td>
+                                            <td>
+                                                {{service.WebSocketClietList[i].CreationDate}}
+                                            </td>
+                                            <td>
+                                                <a class="text-heading font-semibold" href="#">
+                                                    {{service.WebSocketClietList[i].Ip}}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                {{service.WebSocketClietList[i].port}}
+                                            </td>
+                                            <td>
+                                                {{service.WebSocketClietList[i].CommunicationTypeAfterConvert}}
+                                            </td>
+                                            <td>
+                                                {{service.WebSocketClietList[i].Status.TotalFrames}}
+                                            </td>
+                                            <td>
+                                                <ng-template  [ngIf] = "service.WebSocketClietList[i].Status.Status == 0">
+                                                    <div class="pulse-green">
+                                                        <p style="margin-left: 25px; margin-top: -3px;">Active</p> 
+                                                   </div>
+                                                </ng-template>
+
+                                                <ng-template  [ngIf] = "service.WebSocketClietList[i].Status.Status == 1">
+                                                    <div class="pulse-red">
+                                                        <p style="margin-left: 25px; margin-top: -3px;">Inactive</p> 
+                                                   </div>
+                                                </ng-template>
+                                            </td>
+                                            <td class="text-end">
+                                                <button (click) ="CancelWebSocket(service.WebSocketClietList[i])" type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </ng-template>
+
+                                    <ng-template ngFor let-item [ngForOf]="this.service.SplunkClientList" let-i="index" >
+                                        <tr>
+                                            <td>
+                                                <img alt="..." src="assets\SplunkLogo-removebg-preview.png?raw=true" width="30px" height="30px">
+                                                <a class="text-heading font-semibold">
+                                                        Splunk Client
+                                                </a>
+                                            </td>
+                                            <td>
+                                                {{service.SplunkClientList[i].CreationDate}}
+                                            </td>
+                                            <td>
+                                                <a class="text-heading font-semibold" href="#">
+                                                    {{service.SplunkClientList[i].Ip}}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                {{service.SplunkClientList[i].port}}
+                                            </td>
+                                            <td>
+                                                {{service.SplunkClientList[i].CommunicationTypeAfterConvert}}
+                                            </td>
+                                            <td>
+                                                {{service.SplunkClientList[i].Status.TotalFrames}}
+                                            </td>
+                                            <td>
+                                                <ng-template  [ngIf] = "service.SplunkClientList[i].Status.Status == 0">
+                                                    <div class="pulse-green">
+                                                        <p style="margin-left: 25px; margin-top: -3px;">Active</p> 
+                                                   </div>
+                                                </ng-template>
+
+                                                <ng-template  [ngIf] = "service.SplunkClientList[i].Status.Status == 1">
+                                                    <div class="pulse-red">
+                                                        <p style="margin-left: 25px; margin-top: -3px;">Inactive</p> 
+                                                   </div>
+                                                </ng-template>
+                                            </td>
+                                            <td class="text-end">
+                                                <button (click) ="CancelSplunk(service.SplunkClientList[i])" type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </ng-template>
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    </div>
+
+ 

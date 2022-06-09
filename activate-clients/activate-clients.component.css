@@ -1,0 +1,709 @@
+:root {
+    --characters: 24;
+    --typewriter-speed: 4s;
+    --carot-blink-speed: 1s;
+    --carot-color: black;
+    --carot-size: 0.09em;
+    --bgcolor: white;
+  }
+  
+  .Mainbody {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+  }
+  
+  h1 {
+    position: relative;
+    min-width: max-content;
+    margin: 50px;
+    background-color: var(--bgcolor);
+    font-size: 40px;
+    font-family: monospace;
+    font-weight: 100;
+  }
+  
+  h1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bgcolor);
+    border-left: var(--carot-size) solid var(--carot-color);
+    animation: typewriter var(--typewriter-speed) steps(var(--characters))
+        forwards,
+      blink var(--carot-blink-speed) step-start var(--typewriter-speed) infinite;
+  }
+  
+  .subtitle {
+    opacity: 0;
+    font-size: 20px;
+    font-family: sans-serif;
+    animation: subtitle 1s forwards;
+    animation-delay: calc(var(--typewriter-speed) + 0.5s);
+  }
+  
+  @keyframes typewriter {
+    to {
+      left: 100%;
+      width: 0;
+    }
+  }
+  
+  @keyframes blink {
+    50%{opacity: 0;}
+  }
+  
+  @keyframes subtitle {
+    to {
+      opacity: 1;
+    }
+  }
+  
+
+
+  
+body{
+    padding: 0;
+    min-height: 130%;
+    background:#191919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: consolas;
+    
+}
+
+.container{
+    width: 1000px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 175px;
+
+}
+
+.container .card{
+    position: relative;
+    cursor: pointer;
+    margin-top: -15%;
+    margin-left: 0%;
+  
+}
+
+.container .card .face{
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+}
+
+.container .card .face.face1{
+    position: relative;
+    background: #141414;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.container .card:hover .face.face1{
+    background: #ff0057;
+    transform: translateY(0);
+}
+
+.container .card .face.face1 .content{
+    opacity: 0.78;
+    transition: 0.5s;
+}
+
+.container .card:hover .face.face1 .content{
+    opacity: 1;
+}
+
+.container .card .face.face1 .content img{
+    max-width: 100px;
+}
+
+.container .card .face.face1 .content h3{
+    margin: 10px 0 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.container .card .face.face2{
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+    transform: translateY(-100px);
+}
+
+.container .card:hover .face.face2{
+    transform: translateY(0);
+}
+
+.container .card .face.face2 .content p{
+    margin: 0;
+    padding: 0;
+}
+
+.container .card .face.face2 .content a{
+    margin: 15px 0 0;
+    display:  inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #333;
+}
+
+.container .card .face.face2 .content a:hover{
+    background: #333;
+    color: #fff;
+}
+@keyframes FromLeft {
+  from {margin-top: -10%;}
+  to {margin-top: -15%;}
+}
+
+:root {
+    --characters: 24;
+    --typewriter-speed: 4s;
+    --carot-blink-speed: 1s;
+    --carot-color: black;
+    --carot-size: 0.09em;
+    --bgcolor: white;
+  }
+  
+  body {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+  }
+  
+  h1 {
+    position: relative;
+    min-width: max-content;
+    margin: 50px;
+    background-color: var(--bgcolor);
+    font-size: 40px;
+    font-family: monospace;
+    font-weight: 100;
+  }
+  
+  h1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bgcolor);
+    border-left: var(--carot-size) solid var(--carot-color);
+    animation: typewriter var(--typewriter-speed) steps(var(--characters))
+        forwards,
+      blink var(--carot-blink-speed) step-start var(--typewriter-speed) infinite;
+  }
+  
+  .subtitle {
+    opacity: 0;
+    font-size: 20px;
+    font-family: sans-serif;
+    animation: subtitle 1s forwards;
+    animation-delay: calc(var(--typewriter-speed) + 0.5s);
+  }
+  
+  @keyframes typewriter {
+    to {
+      left: 100%;
+      width: 0;
+    }
+  }
+  
+  @keyframes blink {
+    50%{opacity: 0;}
+  }
+  
+  @keyframes subtitle {
+    to {
+      opacity: 1;
+    }
+  }
+
+
+  .form {
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 550px;
+    padding: 20px;
+    width: 420px;
+    margin-top: -420px;
+    margin-left: 0px;
+  }
+  
+  .title {
+    color: #eee;
+    font-family: consolas;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 30px;
+    animation-name: ChangeVisibility;
+    animation-duration: 1.8s;
+  }
+  
+  .subtitle {
+    color: #eee;
+    font-family: poppins;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    animation-name: ChangeVisibility;
+    animation-duration: 1.8s;
+  }
+  
+  .input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+    animation-name: ChangeVisibility;
+    animation-duration: 1.8s;
+  }
+  
+  .ic1 {
+    margin-top: 40px;
+   
+  }
+  
+  .ic2 {
+    margin-top: 30px;
+  
+  }
+  
+  .input {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+    text-align: center;
+  
+  }
+  
+  .cut {
+    background-color: #15172b;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 78px;
+    
+  }
+  
+  .cut-short {
+    width: 50px;
+ 
+  }
+  
+  .input:focus ~ .cut,
+  .input:not(:placeholder-shown) ~ .cut {
+    transform: translateY(8px);
+  }
+  
+  .placeholder {
+    color: #65657b;
+    font-family: sans-serif;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+    
+  }
+  
+  .input:focus ~ .placeholder,
+  .input:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+  }
+  
+  .input:not(:placeholder-shown) ~ .placeholder {
+    color: #808097;
+  }
+  
+  .input:focus ~ .placeholder {
+    color: #dc2f55;
+  }
+  
+  .submit {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+    outline: 0;
+    text-align: center;
+    width: 100%;
+    animation-name: ChangeVisibility;
+    animation-duration: 1.8s;
+  }
+  
+  .submit:active {
+    background-color: #06b;
+  }
+  
+  
+<!--checkBox->
+
+
+  
+  .app i {
+    font-size: 80px;
+    
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+    animation-name: ChangeVisibility;
+    animation-duration: 2.8s;
+  }
+  
+  article {
+    position: relative;
+    width: 140px;
+    height: 100px;
+    margin: 5px;
+    float: left;
+    border: 2px solid #50bcf2;
+    box-sizing: border-box;
+    height:55px;
+    width: 110px;
+    margin-left: 5px;
+    color: whitesmoke;
+    animation-name: ChangeVisibility;
+    animation-duration: 2s;
+
+  }
+  
+  article div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 25px;
+    transition: .5s ease;
+    animation-name: ChangeVisibility;
+    animation-duration: 1.8s;
+  }
+  
+  article input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 100px;
+    opacity: 0;
+    cursor: pointer;
+    animation-name: ChangeVisibility;
+    animation-duration: 1.8s;
+  }
+  
+  input[type=checkbox]:checked ~ div {
+    background-color: #50bcf2;
+  }
+  
+  .blue-color {
+    color: #50bcf2;
+  }
+ 
+ 
+  @keyframes slidein {
+    from {
+      margin-top: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin: 0%;
+      width: 100%;
+    }
+  }
+  .secondRow{
+      margin-left: 65px;
+  }
+
+  .line-1{
+    position: relative;
+    width: 17em;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 25px;
+    margin-top: 25px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    background: transparent;
+    margin-bottom: -55px;
+    margin-left: 35%;
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 17em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
+a{
+  position: relative;
+  display: inline-block;
+  padding: 25px 30px;
+  margin: 40px 0;
+  color: #03e9f4;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+  margin-right: 50px;
+
+ 
+}
+a:hover{
+  background: #03e9f4;
+  color: #426317;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 200px #03e9f4;
+   -webkit-box-reflect:below 1px linear-gradient(transparent, rgba(15, 27, 136, 0.333));
+}
+
+a span{
+  position: absolute;
+  display: block;
+
+}
+a span:nth-child(1){
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,#03e9f4);
+  animation: animate2 1s linear infinite;
+
+}
+@keyframes animate1{
+  0%{
+      left: -100%;
+  }
+  50%,100%{
+      left: 100%;
+  }
+}
+a span:nth-child(2){
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,#03e9f4);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+ 
+}
+@keyframes animate2{
+  0%{
+      top: -100%;
+  }
+  50%,100%{
+      top: 100%;
+  }
+}
+a span:nth-child(3){
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg,transparent,#03e9f4);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.50s;
+
+}
+@keyframes animate3{
+  0%{
+      right: -100%;
+  }
+  50%,100%{
+      right: 100%;
+  }
+}
+
+
+a span:nth-child(4){
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,#03e9f4);
+
+}
+@keyframes animate4{
+  0%{
+      bottom: -100%;
+  }
+  50%,100%{
+      bottom: 100%;
+  }
+}
+@keyframes FromLeft {
+  from {margin-left: 15%;}
+  to {margin-left: 0%;}
+}
+@keyframes FromRight {
+  from {margin-left: -15%;}
+  to {margin-left: 0%;}
+}
+@keyframes ChangePositiomMongo {
+ 
+  from {margin-left: -250px;}
+  to {margin-left: 0px;}
+  from {height: 200px;}
+  to {height: 720px;}
+    from {width: 300px;}
+    to {width: 420px;}
+}
+@keyframes ChangePositiomTcp {
+
+  from {height: 200px;}
+  to {height: 550px;}
+    from {width: 300px;}
+    to {width: 420px;}
+}
+@keyframes ChangePositiomUcp {
+  from {margin-left: 550px;}
+  to {margin-left: 0px;}
+  from {height: 200px;}
+  to {height: 550px;}
+    from {width: 300px;}
+    to {width: 420px;}
+}
+@keyframes ChangePositiomHttp {
+ 
+  from {margin-left: -250px;}
+  to {margin-left: 0px;}
+  from {height: 200px;}
+  to {height: 550px;}
+    from {width: 300px;}
+    to {width: 420px;}
+}
+@keyframes ChangePositiomSplunk {
+  from {margin-top: 100px;}
+  to {margin-top: -420px;}
+  from {height: 200px;}
+  to {height: 620px;}
+    from {width: 300px;}
+    to {width: 420px;}
+}
+@keyframes ChangePositiomWebSocket {
+  from {margin-left: 550px;}
+  to {margin-left: 0px;}
+  from {height: 200px;}
+  to {height: 550px;}
+    from {width: 300px;}
+    to {width: 420px;}
+    from {margin-top: 100px;}
+    to {margin-top: -420px;}
+}
+@keyframes ChangeVisibility {
+  0%   {opacity: 0;}
+  90%  {opacity: 0;}
+  100% {opacity: 1;}
+}
+.close-container{
+  position: relative;
+  margin: auto;
+  cursor: pointer;
+  margin-left: 90%;
+  animation-name: ChangeVisibility;
+    animation-duration: 1.8s;
+}
+
+.leftright{
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: #F4A259;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all .3s ease-in;
+}
+
+.rightleft{
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: #F4A259;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  transition: all .3s ease-in;
+}
+
+label{
+  color: white;
+  font-family: Helvetica, Arial, sans-serif; 
+  font-size: .6em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all .3s ease-in;
+}
+
+
+.close-container:hover .leftright{
+  transform: rotate(-45deg);
+  background-color: #F25C66;
+}
+.close-container:hover .rightleft{
+  transform: rotate(45deg);
+  background-color: #F25C66;
+}
+.close-container:hover label{
+  opacity: 1;
+}
+
+
+

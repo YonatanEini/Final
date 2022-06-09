@@ -1,0 +1,30 @@
+<ng-template [ngIf] = "this.service.name == ''">
+  <app-login-signin-form></app-login-signin-form>
+</ng-template>
+
+<ng-template [ngIf] = "this.service.name != ''">
+
+<ng-template [ngIf] = "!this.service.onGraphs">
+<html>
+  <head>
+
+  </head>
+  <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+  <body>
+    
+    <div class="bg">
+      <ng-template [ngIf]="!this.service.ShowAlert">     
+            <app-main-menu> </app-main-menu>
+      </ng-template>
+    </div>
+  </body>
+</html>
+<div style="margin-top: 10px;">
+  <app-app-home-page></app-app-home-page>
+  <app-home-page></app-home-page>
+
+</div>
+</ng-template>
+</ng-template>
+
+<router-outlet></router-outlet>

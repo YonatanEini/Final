@@ -1,0 +1,582 @@
+<body>
+    <ng-template [ngIf]="!ShowForm">   
+    <p class="line-1 anim-typewriter">Choose And Create Your Client!</p>
+    </ng-template>
+
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <ng-template [ngIf]="!ShowForm">   
+        
+    <div class="container">
+        <div class="card" style="  animation-name:FromLeft;
+        animation-duration: 1s;" >
+            <div class="face face1" style="background-color: #0f0f0f; border: #e2eaeeef 2px solid">
+                <div class="content" >
+                    <img src="assets\mongoLogo-removebg-preview.png?raw=true">
+                    <h3>MongoDB Client</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Send Your Decoded Frames Into MongoDB Platform To Save Decoded Frames Data. Click The Button To Fill The MongoDB Client Properties.</p>
+                        <a  (click) =" ShowMongoForm()"> <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          Edit Properties</a>
+                </div>
+            </div>
+        </div>
+        <div class="card" >
+            <div class="face face1" style="background-color: #0f0f0f;border: #e2eaeeef 2px solid">
+                <div class="content">
+                    <img src="assets\TcpLogo-removebg-preview.png?raw=true">
+                    <h3>Tcp Client</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Send Your Decoded Frames To Tcp End Point Server In Order To Create Data Search And Filter. Click The Button To Edit Properties </p>
+                        <a (click) = "showTcpForm()">Edit Properties</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="face face1" style="background-color: #0f0f0f;border: #e2eaeeef 2px solid">
+                <div class="content">
+                    <img src="assets\UdpLogo-removebg-preview.png?raw=true">
+                    <h3>Udp Client</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Send Your Decoded Frames To Udp Server End Point In Order To Create Real-Time Data Update. Click The Button To Edit Properties</p>
+                        <a (click) = "ShowUdpForm()">Edit Properties</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <div class="container">
+        <div class="card"   style="  animation-name:FromLeft;
+        animation-duration: 1s;">
+            <div class="face face1" style="background-color: #0f0f0f
+            ;border: #e2eaeeef 3px solid">
+                <div class="content">
+                    <img src="assets\httpLogo-removebg-preview.png?raw=true">
+                    <h3>Http Client</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Send Your Decoded Frames To Http Server End Point In Order To Create Live Graphs And Analyzed Data. Click The Button To Edit Properties</p>
+                        <a (click) = "ShowHttpForm()">Edit Properties</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="face face1" style="background-color: #0f0f0f;border: #e2eaeeef 2px solid">
+                <div class="content">
+                    <img src="assets\SplunkLogo-removebg-preview.png?raw=true"  width="380px">
+                    <h3>Splunk Client</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Send Your Data To Splunk Tool. Search Through Your Data And Create DashBoardes!. Click The Button To Edit Properties</p>
+                        <a (click)="ShowSplunkForm()">Edit Properties</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="face face1" style="background-color: #0f0f0f; border: #e2eaeeef 2px solid ">
+                <div class="content">
+                    <img src="assets\WebSocketLogo-removebg-preview.png?raw=true">
+                    <h3>WebSocket Client</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Send Your Decoded Frames To WebSocket End Point. Click The Button To Edit Proprties</p>
+                        <a (click)= "ShowWebSocketForm()">Edit Propeties</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+    <router-outlet></router-outlet>
+    <!--Tcp Form-->
+    <ng-template [ngIf]="ShowTcp">   
+    <div class="form"  style="background-color: #060606; animation-name: ChangePositiomTcp;
+    animation-duration: 2s;">
+      <div (click) ="closeForm()" class="close-container">
+        <div class="leftright"></div>
+        <div class="rightleft"></div>
+      </div>
+        <div class="title">Tcp Client </div>
+        <div class="subtitle">Let's create your client!</div>
+        <div class="input-container ic1">
+          <input id="Ip Address" class="input" type="text" placeholder=" " [(ngModel)]= "TcpClien.Ip" required="" (change) = "TcpPortNumberChange($event)"/>
+          <div class="cut"></div>
+          <label for="Ip Address" class="placeholder">Ip Address</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="portNumber" class="input" type="number" placeholder=" "   required="" (change) = "TcpPortNumberChange($event)" />
+          <div class="cut"></div>
+          <label for="portNumber" class="placeholder">Port Number</label>
+        </div>
+        <br><br>
+        <section class="app">
+            <article class="feature1">
+              <input type="checkbox" id="feature1" value="0"  (change)="TcpCommunicationTypeCheckBox($event)"/>
+              <div>
+                <span>
+                 FlightBoxUp
+                </span>
+              </div>
+            </article>
+            
+            <article class="feature2">
+              <input type="checkbox" id="feature2" value="1"  (change)="TcpCommunicationTypeCheckBox($event)"/>
+              <div>
+                <span>
+                 FlightBoxDown
+                </span>
+              </div>
+            </article>
+            
+            <article class="feature3">
+              <input type="checkbox" id="feature3" value="2"  (change)="TcpCommunicationTypeCheckBox($event)"/>
+              <div>
+                <span>
+                  FiberBoxUp
+                </span>
+              </div>
+            </article>
+            <div class="secondRow">
+                
+            <article class="feature4">
+              <input type="checkbox" id="feature4" value="3"  (change)="TcpCommunicationTypeCheckBox($event)"/>
+              <div>
+                <span>
+                    FiberBoxDown
+                </span>
+              </div>
+            </article>
+            <article class="feature5">
+                <input type="checkbox" id="feature5" value="4"  (change)="TcpCommunicationTypeCheckBox($event)"/>
+                <div>
+                  <span>
+                      LandingBox
+                  </span>
+                </div>
+              </article>
+            </div>
+
+            </section>          
+
+        <button type="text" class="submit" (click) ="startTcpClient()">Submit Properties</button>
+      </div>
+      </ng-template>
+
+
+       <!--Udp Form-->
+    <ng-template [ngIf]="showUdp">   
+        <div class="form" style="background-color: #0a0e16;    animation-name: ChangePositiomUcp;
+    animation-duration: 2s;">
+    <div (click) ="closeForm()" class="close-container">
+      <div class="leftright"></div>
+      <div class="rightleft"></div>
+    </div>
+            <div class="title">Udp Client </div>
+            <div class="subtitle">Let's create your client!</div>
+            <div class="input-container ic1">
+              <input id="Ip Address" class="input" type="text" placeholder=" " [(ngModel)]= "UdpClien.Ip" required="" (change) = "UdpIPAdressChange($event)"/>
+              <div class="cut"></div>
+              <label for="Ip Address" class="placeholder">Ip Address</label>
+            </div>
+            <div class="input-container ic2"> 
+              <input id="portNumber" class="input" type="number" placeholder=" " required="" (change) = "UdpPortNumberChange($event)" />
+              <div class="cut"></div>
+              <label for="portNumber" class="placeholder">Port Number</label>
+            </div>
+            <br><br>
+            <section class="app">
+                <article class="feature1">
+                  <input type="checkbox" id="feature1" value="0"  (change)="UdpCommunicationTypeCheckBox($event)"/>
+                  <div>
+                    <span>
+                     FlightBoxUp
+                    </span>
+                  </div>
+                </article>
+                
+                <article class="feature2">
+                  <input type="checkbox" id="feature2" value="1"  (change)="UdpCommunicationTypeCheckBox($event)"/>
+                  <div>
+                    <span>
+                     FlightBoxDown
+                    </span>
+                  </div>
+                </article>
+                
+                <article class="feature3">
+                  <input type="checkbox" id="feature3" value="2"  (change)="UdpCommunicationTypeCheckBox($event)"/>
+                  <div>
+                    <span>
+                      FiberBoxUp
+                    </span>
+                  </div>
+                </article>
+                <div class="secondRow">
+                    
+                <article class="feature4">
+                  <input type="checkbox" id="feature4" value="3"  (change)="UdpCommunicationTypeCheckBox($event)"/>
+                  <div>
+                    <span>
+                        FiberBoxDown
+                    </span>
+                  </div>
+                </article>
+                <article class="feature5">
+                    <input type="checkbox" id="feature5" value="4"  (change)="UdpCommunicationTypeCheckBox($event)"/>
+                    <div>
+                      <span>
+                          LandingBox
+                      </span>
+                    </div>
+                  </article>
+                </div>
+    
+                </section>          
+    
+            <button type="text" class="submit" (click) =" startUdpClient()">Submit Properties</button>
+          </div>
+          </ng-template>
+
+
+        <!--http Form-->
+          <ng-template [ngIf]="showHttp">   
+            <div class="form"  style="background-color: #141414; animation-name: ChangePositiomHttp;
+    animation-duration: 2s;;
+            ">
+            <div (click) ="closeForm()" class="close-container">
+              <div class="leftright"></div>
+              <div class="rightleft"></div>
+            </div>
+                <div class="title">Http Client </div>
+                <div class="subtitle">Let's create your client!</div>
+                <div class="input-container ic1">
+                  <input id="Ip Address" class="input" type="text" placeholder=" " [(ngModel)]= "HttpClientProps.Ip" required="" (change) = "HttpIPAdressChange($event)"/>
+                  <div class="cut"></div>
+                  <label for="Ip Address" class="placeholder">Ip Address</label>
+                </div>
+                <div class="input-container ic2"> 
+                  <input id="portNumber" class="input" type="number" placeholder=" "   required="" (change) = "HttpPortNumberChange($event)" />
+                  <div class="cut"></div>
+                  <label for="portNumber" class="placeholder">Port Number</label>
+                </div>
+                <br><br>
+                <section class="app">
+                    <article class="feature1">
+                      <input type="checkbox" id="feature1" value="0"  (change)="HttpCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                         FlightBoxUp
+                        </span>
+                      </div>
+                    </article>
+                    
+                    <article class="feature2">
+                      <input type="checkbox" id="feature2" value="1"  (change)="HttpCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                         FlightBoxDown
+                        </span>
+                      </div>
+                    </article>
+                    
+                    <article class="feature3">
+                      <input type="checkbox" id="feature3" value="2"  (change)="HttpCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                          FiberBoxUp
+                        </span>
+                      </div>
+                    </article>
+                    <div class="secondRow">
+                        
+                    <article class="feature4">
+                      <input type="checkbox" id="feature4" value="3"  (change)="HttpCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                            FiberBoxDown
+                        </span>
+                      </div>
+                    </article>
+                    <article class="feature5">
+                        <input type="checkbox" id="feature5" value="4"  (change)="HttpCommunicationTypeCheckBox($event)"/>
+                        <div>
+                          <span>
+                              LandingBox
+                          </span>
+                        </div>
+                      </article>
+                    </div>
+        
+                    </section>          
+        
+                <button type="text" class="submit" (click) ="startHttpClient()">Submit Properties</button>
+              </div>
+              </ng-template>
+
+              
+        <!--WebSocket Form-->
+          <ng-template [ngIf]="ShowWebSocket">   
+            <div class="form" style="background-color: #212826; animation-name: ChangePositiomWebSocket;
+            animation-duration: 2s;">
+               <div (click) ="closeForm()" style="margin-top: -10px;" class="close-container">
+                <div class="leftright"></div>
+                <div class="rightleft"></div>
+              </div>
+                <div style="margin-bottom: -10px;" class="title">WebSocket Client </div>
+                <div class="subtitle">Let's create your client!</div>
+                <div class="input-container ic1">
+                  <input id="Ip Address" class="input" type="text" placeholder=" " [(ngModel)]= "WebSocketClient.Ip" required="" (change) = "WebSocketIPAdressChange($event)"/>
+                  <div class="cut"></div>
+                  <label for="Ip Address" class="placeholder">Ip Address</label>
+                </div>
+                <div class="input-container ic2"> 
+                  <input id="portNumber" class="input" type="number" placeholder=" "   required="" (change) = "WebSocketPortNumberChange($event)" />
+                  <div class="cut"></div>
+                  <label for="portNumber" class="placeholder">Port Number</label>
+                </div>
+                <br><br>
+                <section class="app">
+                    <article class="feature1">
+                      <input type="checkbox" id="feature1" value="0"  (change)="WebSocketCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                         FlightBoxUp
+                        </span>
+                      </div>
+                    </article>
+                    
+                    <article class="feature2">
+                      <input type="checkbox" id="feature2" value="1"  (change)="WebSocketCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                         FlightBoxDown
+                        </span>
+                      </div>
+                    </article>
+                    
+                    <article class="feature3">
+                      <input type="checkbox" id="feature3" value="2"  (change)="WebSocketCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                          FiberBoxUp
+                        </span>
+                      </div>
+                    </article>
+                    <div class="secondRow">
+                        
+                    <article class="feature4">
+                      <input type="checkbox" id="feature4" value="3"  (change)="WebSocketCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                            FiberBoxDown
+                        </span>
+                      </div>
+                    </article>
+                    <article class="feature5">
+                        <input type="checkbox" id="feature5" value="4"  (change)="WebSocketCommunicationTypeCheckBox($event)"/>
+                        <div>
+                          <span>
+                              LandingBox
+                          </span>
+                        </div>
+                      </article>
+                    </div>
+        
+                    </section>          
+        
+                <button type="text" class="submit" (click) ="startWebSocketClient()">Submit Properties</button>
+              </div>
+              </ng-template>
+
+        <!--Mongo Form-->
+          <ng-template [ngIf]="showMongo">   
+            <div class="form" style="height: 720px;margin-top: -350px; background-color: #152115;    animation-name: ChangePositiomMongo;
+    animation-duration: 2s;">
+       <div (click) ="closeForm()" class="close-container">
+        <div class="leftright"></div>
+        <div class="rightleft"></div>
+      </div>
+                <div class="title">MongoDB Client </div>
+                <div class="subtitle">Let's create your client!</div>
+                <div class="input-container ic1">
+                  <input id="Ip Address" class="input" type="text"  placeholder=" " [(ngModel)]= "MongoclientProps.Ip" required="" (change) = "MongoIPAdressChange($event)"/>
+                  <div class="cut"></div>
+                  <label  for="Ip Address" class="placeholder">Ip Address</label>
+                </div>
+                <div  class="input-container ic2"> 
+                  <input  id="portNumber" class="input" type="number" placeholder=" " (change) = "MongdbPortNumberChange($event)" />
+                  <div class="cut"></div>
+                  <label for="portNumber" class="placeholder">Port Number</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="DataBase Name" class="input" type="text" placeholder=" " [(ngModel)]= "MongoclientProps.DataBaseName" required="" (change) = "DataBaseNameChange($event)"/>
+                    <div class="cut" style="width: 95px;"></div>
+                    <label for="DataBase Name" class="placeholder">DataBase Name</label>
+                  </div>
+                  <div class="input-container ic2">
+                    <input id="Collection Name" class="input" type="text" placeholder=" " [(ngModel)]= "MongoclientProps.CollectionName" required="" (change) = "CollectionNameChange($event)"/>
+                    <div class="cut" style="width: 95px;"></div>
+                    <label for="Collection Name" class="placeholder">Collection Name</label>
+                  </div>
+                <br><br>
+                <section class="app">
+                    <article class="feature1">
+                      <input type="checkbox" id="feature1" value="0"  (change)="MongoCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                         FlightBoxUp
+                        </span>
+                      </div>
+                    </article>
+                    
+                    <article class="feature2">
+                      <input type="checkbox" id="feature2" value="1"  (change)="MongoCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                         FlightBoxDown
+                        </span>
+                      </div>
+                    </article>
+                    
+                    <article class="feature3">
+                      <input type="checkbox" id="feature3" value="2"  (change)="MongoCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                          FiberBoxUp
+                        </span>
+                      </div>
+                    </article>
+                    <div class="secondRow">
+                        
+                    <article class="feature4">
+                      <input type="checkbox" id="feature4" value="3"  (change)="MongoCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                            FiberBoxDown
+                        </span>
+                      </div>
+                    </article>
+                    <article class="feature5">
+                        <input type="checkbox" id="feature5" value="4"  (change)="MongoCommunicationTypeCheckBox($event)"/>
+                        <div>
+                          <span>
+                              LandingBox
+                          </span>
+                        </div>
+                      </article>
+                    </div>
+        
+                    </section>          
+        
+                <button type="text" class="submit" (click) ="startMongoClient()">Submit Properties</button>
+              </div>
+              </ng-template>
+
+              <!--Splunk Form-->
+          <ng-template [ngIf]="ShowSplunk">   
+            <div class="form" style="height: 620px;margin-top: -390px;background-color: #171d1b;   animation-name: ChangePositiomSplunk;
+    animation-duration: 2s;">
+    <div (click) ="closeForm()" class="close-container">
+      <div class="leftright"></div>
+      <div class="rightleft"></div>
+    </div>
+                <div class="title">Splunk Client </div>
+                <div class="subtitle">Let's create your client!</div>
+                <div class="input-container ic1">
+                  <input id="Ip Address" class="input" type="text" placeholder=" " [(ngModel)]= "SplunkClient.Ip" required="" (change) = "SplunkIPAdressChange($event)"/>
+                  <div class="cut"></div>
+                  <label for="Ip Address" class="placeholder">Ip Address</label>
+                </div>
+                <div class="input-container ic2"> 
+                  <input id="portNumber" class="input" type="number" placeholder=" "  required="" (change) = "SplunkPortNumberChange($event)" />
+                  <div class="cut"></div>
+                  <label for="portNumber" class="placeholder">Port Number</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="HttpEvent Token" class="input" type="text" placeholder=" " [(ngModel)]= "SplunkClient.HttpEventCollectorToken" required="" (change) = "TokenNameChange($event)"/>
+                    <div class="cut" style="width: 95px;"></div>
+                    <label for="HttpEvent Token" class="placeholder">HttpEvent Token</label>
+                  </div>
+                <br><br>
+                <section class="app">
+                    <article class="feature1">
+                      <input type="checkbox" id="feature1" value="0"  (change)="SplunkCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                         FlightBoxUp
+                        </span>
+                      </div>
+                    </article>
+                    
+                    <article class="feature2">
+                      <input type="checkbox" id="feature2" value="1"  (change)="SplunkCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                         FlightBoxDown
+                        </span>
+                      </div>
+                    </article>
+                    
+                    <article class="feature3">
+                      <input type="checkbox" id="feature3" value="2"  (change)="SplunkCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                          FiberBoxUp
+                        </span>
+                      </div>
+                    </article>
+                    <div class="secondRow">
+                        
+                    <article class="feature4">
+                      <input type="checkbox" id="feature4" value="3"  (change)="SplunkCommunicationTypeCheckBox($event)"/>
+                      <div>
+                        <span>
+                            FiberBoxDown
+                        </span>
+                      </div>
+                    </article>
+                    <article class="feature5">
+                        <input type="checkbox" id="feature5" value="4"  (change)="SplunkCommunicationTypeCheckBox($event)"/>
+                        <div>
+                          <span>
+                              LandingBox
+                          </span>
+                        </div>
+                      </article>
+                    </div>
+        
+                    </section>          
+        
+                <button type="text" class="submit" (click) ="startSplunkClient()">Submit Properties</button>
+              </div>
+              </ng-template>
+
+              
+
+</body>
+
+
+

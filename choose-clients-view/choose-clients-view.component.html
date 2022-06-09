@@ -1,0 +1,884 @@
+
+<div class="job" style="font-family: Poppins, sans-serif;">
+   
+
+    <div class="wrapper">
+      <div [ngClass]="{'detail-page': showForm===true}"  >
+     <div class="main-container">
+      <div class="search-type">
+
+      </div>
+      <div class="searched-jobs">
+       <div class="searched-bar">
+        <div class="searched-show">Connect Clients!</div>
+       </div>
+       <div class="job-cards">
+        <div class="job-card">
+         <div class="job-card-header">
+            <img style="width: 50px; height: 50px;"  src="assets\TcpLogo-removebg-preview.png?raw=true">
+
+          <div class="menu-dot"></div>
+         </div>
+         <div class="job-card-title">Tcp Client</div>
+         <div class="job-card-subtitle">
+            The Transmission Control Protocol (TCP) is one of the most important protocols of Internet Protocols suite. It is most widely used protocol for data transmission in communication network.         </div>
+         <div class="job-detail-buttons">
+          <button class="search-buttons detail-button">Reliable</button>
+          <button class="search-buttons detail-button">Error-Checking</button>
+          <button class="search-buttons detail-button">End-To-End Communication</button>
+         </div>
+         <div class="job-card-buttons">
+          <button (click) = "ShowPage()" class="search-buttons card-buttons">Connect Client!</button>
+         </div>
+        </div>
+        <div class="job-card">
+         <div class="job-card-header">
+            <img style="width: 50px; height: 50px;"  src="assets\UdpLogo.png?raw=true">
+
+          <div class="menu-dot"></div>
+         </div>
+         <div class="job-card-title">Udp Client</div>
+         <div class="job-card-subtitle">
+            The User Datagram Protocol (UDP) is simplest Transport Layer communication protocol available of the TCP/IP protocol suite. It involves minimum amount of communication mechanism.     </div>
+         <div class="job-detail-buttons">
+          <button class="search-buttons detail-button">Fast</button>
+          <button class="search-buttons detail-button">Stateless</button>
+          <button class="search-buttons detail-button">Simple </button>
+         </div>
+         <div class="job-card-buttons">
+          <button (click) = "ShowUdp()" class="search-buttons card-buttons">Connect Client!</button>
+         </div>
+        </div>
+        <div class="job-card">
+         <div class="job-card-header">
+            <img style="width: 50px; height: 50px;" src="assets\mongoLogo-removebg-preview.png?raw=true">
+
+          <div class="menu-dot"></div>
+         </div>
+         <div class="job-card-title">MongoDB Client</div>
+         <div class="job-card-subtitle">
+            MongoDB is a scalable, flexible NoSQL document database platform designed to overcome the relational databases approach and the limitations of other NoSQL solutions.
+         </div>
+         <div class="job-detail-buttons">
+          <button class="search-buttons detail-button">High Performance</button>
+          <button class="search-buttons detail-button">Indexing</button>
+          <button class="search-buttons detail-button">Schema-Less Database</button>
+         </div>
+         <div class="job-card-buttons">
+          <button (click) = "ShowMongo()" class="search-buttons card-buttons">Connect Client!</button>
+         </div>
+        </div>
+        <div class="job-card">
+         <div class="job-card-header">
+            <img style="width: 60px; height: 60px;"  src="assets\SplunkLogo-removebg-preview.png?raw=true">
+
+          <div class="menu-dot"></div>
+         </div>
+         <div class="job-card-title">Splunk Client</div>
+         <div class="job-card-subtitle">
+            Splunk is a software which processes and brings out insight from machine data and other forms of big data. it allows to search, tag, create reports and dashboards.
+         </div>
+         <div class="job-detail-buttons">
+          <button class="search-buttons detail-button">Data Searching</button>
+          <button class="search-buttons detail-button">Data Indexing</button>
+          <button class="search-buttons detail-button">Dashboards</button>
+         </div>
+         <div class="job-card-buttons">
+          <button (click) = "ShowSplunk()" class="search-buttons card-buttons">Connect Client!</button>
+         </div>
+        </div>
+        <div class="job-card">
+         <div class="job-card-header">
+            <img style="width: 90px; height: 60px;"  src="assets\WebSocketLogo-removebg-preview.png?raw=true">
+
+          <div class="menu-dot"></div>
+         </div>
+         <div class="job-card-title">Web Socket Client</div>
+         <div class="job-card-subtitle">
+            The WebSocket Protocol is a widely supported open standard for developing real-time applications. Web sockets are defined as a two-way communication between the servers and the clients.
+         </div>
+         <div class="job-detail-buttons">
+          <button class="search-buttons detail-button">Handshake</button>
+          <button class="search-buttons detail-button">Full Duplex</button>
+         </div>
+         <div class="job-card-buttons">
+          <button (click)= "ShowWebSocket()" class="search-buttons card-buttons">Connect Client!</button>
+         </div>
+        </div>
+        <div class="job-card">
+         <div class="job-card-header">
+            <img style="width: 65px; height: 35px;margin-top: 15px;"  src="assets\httpLogo-removebg-preview.png?raw=true">
+          <div class="menu-dot"></div>
+         </div>
+         <div class="job-card-title">Http Client</div>
+         <div class="job-card-subtitle">
+        The Hypertext Transfer Protocol (HTTP) is an application-level protocol for information systems. This is the foundation for data communication for the World Wide Web.
+         </div>
+         <div class="job-detail-buttons">
+          <button class="search-buttons detail-button">Http Requestes</button>
+          <button class="search-buttons detail-button">Status Code</button>
+         </div>
+         <div class="job-card-buttons">
+          <button  (click) ="ShowHttp()" class="search-buttons card-buttons">Connect Client!</button>
+         </div>
+        </div>
+       
+       </div>
+
+
+
+
+
+       <div  class="job-overview">
+        <div class="job-overview-cards">
+         <div  class="job-overview-card">
+             
+          <div (click) = ShowPage() [class.selectedCrad]="showTcp==true" class="job-card overview-card">
+           <div class="overview-wrapper">
+            <img style="width: 50px; height: 50px;"  src="assets\TcpLogo-removebg-preview.png?raw=true">
+
+            <div class="overview-detail">
+             <div style="margin-left: 15px;" class="job-card-title">Tcp Client</div>
+             <div class="job-card-subtitle">
+             </div>
+            </div>
+            <svg style="margin-left: 95px; fill: black; width: 3rem" class="svg-icon" viewBox="0 0 20 20"  >
+                <path d="M12.522,10.4l-3.559,3.562c-0.172,0.173-0.451,0.176-0.625,0c-0.173-0.173-0.173-0.451,0-0.624l3.248-3.25L8.161,6.662c-0.173-0.173-0.173-0.452,0-0.624c0.172-0.175,0.451-0.175,0.624,0l3.738,3.736C12.695,9.947,12.695,10.228,12.522,10.4 M18.406,10c0,4.644-3.764,8.406-8.406,8.406c-4.644,0-8.406-3.763-8.406-8.406S5.356,1.594,10,1.594C14.643,1.594,18.406,5.356,18.406,10M17.521,10c0-4.148-3.374-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.147,17.521,17.521,14.147,17.521,10"></path>
+            </svg>
+           </div>
+           
+           <div class="job-overview-buttons">
+            <div class="search-buttons level-button">Reliable</div>
+            <div style="margin-left: 10px" class="search-buttons level-button">Error-Checking</div>
+          
+           </div>
+          </div>
+         </div>
+         <div class="job-overview-card">
+          <div (click) = "ShowUdp()" [class.selectedCrad]="showUdp==true"  class="job-card overview-card">
+           <div class="overview-wrapper">
+            <img style="width: 50px; height: 50px;"  src="assets\UdpLogo.png?raw=true">
+
+            <div class="overview-detail">
+             <div style="margin-left: 15px;" class="job-card-title">Udp Client</div>
+             <div class="job-card-subtitle">
+             </div>
+            </div>
+            <svg style="margin-left: 95px; fill: black; width: 3rem" class="svg-icon" viewBox="0 0 20 20"  >
+                <path d="M12.522,10.4l-3.559,3.562c-0.172,0.173-0.451,0.176-0.625,0c-0.173-0.173-0.173-0.451,0-0.624l3.248-3.25L8.161,6.662c-0.173-0.173-0.173-0.452,0-0.624c0.172-0.175,0.451-0.175,0.624,0l3.738,3.736C12.695,9.947,12.695,10.228,12.522,10.4 M18.406,10c0,4.644-3.764,8.406-8.406,8.406c-4.644,0-8.406-3.763-8.406-8.406S5.356,1.594,10,1.594C14.643,1.594,18.406,5.356,18.406,10M17.521,10c0-4.148-3.374-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.147,17.521,17.521,14.147,17.521,10"></path>
+            </svg>
+           </div>
+           <div class="job-overview-buttons">
+            <div class="search-buttons level-button">Fast</div>
+            <div style="margin-left: 10px" class="search-buttons level-button">Simple </div>
+            
+           </div>
+          </div>
+         </div>
+         <div class="job-overview-card">
+            <div class="job-overview-card">
+                <div (click) = "ShowMongo()" [class.selectedCrad]="showMongo==true" class="job-card overview-card">
+                 <div class="overview-wrapper">
+                  <img style="width: 50px; height: 50px;"  src="assets\mongoLogo-removebg-preview.png?raw=true">
+      
+                  <div class="overview-detail">
+                   <div style="margin-left: 15px;" class="job-card-title">MongoDB Client</div>
+                   <div class="job-card-subtitle">
+                   </div>
+                  </div>
+                  <svg style="margin-left: 50px; fill: black; width: 3.1rem" class="svg-icon" viewBox="0 0 20 20"  >
+                      <path d="M12.522,10.4l-3.559,3.562c-0.172,0.173-0.451,0.176-0.625,0c-0.173-0.173-0.173-0.451,0-0.624l3.248-3.25L8.161,6.662c-0.173-0.173-0.173-0.452,0-0.624c0.172-0.175,0.451-0.175,0.624,0l3.738,3.736C12.695,9.947,12.695,10.228,12.522,10.4 M18.406,10c0,4.644-3.764,8.406-8.406,8.406c-4.644,0-8.406-3.763-8.406-8.406S5.356,1.594,10,1.594C14.643,1.594,18.406,5.356,18.406,10M17.521,10c0-4.148-3.374-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.147,17.521,17.521,14.147,17.521,10"></path>
+                  </svg>
+                 </div>
+                 <div class="job-overview-buttons">
+                  <div class="search-buttons level-button">Hight Proformence</div>
+                  <div style="margin-left:15px" class="search-buttons level-button">Indexing</div>
+                  
+                 </div>
+                </div>
+               </div>
+         </div>
+         <div class="job-overview-card">
+          <div (click) = "ShowSplunk()" [class.selectedCrad]="showSplunk==true" class="job-card overview-card">
+           <div class="overview-wrapper">
+            <img style="width: 60px; height: 60px;"  src="assets\SplunkLogo-removebg-preview.png?raw=true">
+
+            <div class="overview-detail">
+             <div class="job-card-title">Splunk Client</div>
+           
+            </div>
+            <svg style="margin-left: 80px; fill: black; width: 3rem" class="svg-icon" viewBox="0 0 20 20"  >
+                <path d="M12.522,10.4l-3.559,3.562c-0.172,0.173-0.451,0.176-0.625,0c-0.173-0.173-0.173-0.451,0-0.624l3.248-3.25L8.161,6.662c-0.173-0.173-0.173-0.452,0-0.624c0.172-0.175,0.451-0.175,0.624,0l3.738,3.736C12.695,9.947,12.695,10.228,12.522,10.4 M18.406,10c0,4.644-3.764,8.406-8.406,8.406c-4.644,0-8.406-3.763-8.406-8.406S5.356,1.594,10,1.594C14.643,1.594,18.406,5.356,18.406,10M17.521,10c0-4.148-3.374-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.147,17.521,17.521,14.147,17.521,10"></path>
+            </svg>
+          
+           </div>
+           <div class="job-overview-buttons">
+            <div class="search-buttons level-button">Dashboards</div>
+            <div style="margin-left: 15px;" class="search-buttons level-button">Data Indexing</div>
+            
+           </div>
+          </div>
+         </div>
+         <div class="job-overview-card">
+            <div (click) = "ShowWebSocket()" [class.selectedCrad]="showWebSocket==true" class="job-card overview-card">
+             <div class="overview-wrapper">
+              <img style="width: 65px; height: 50px;"  src="assets\WebSocketLogo-removebg-preview.png?raw=true">
+  
+              <div class="overview-detail">
+               <div class="job-card-title">Web Socket</div>
+             
+              </div>
+              <svg style="margin-left: 85px; fill: black; width: 3rem" class="svg-icon" viewBox="0 0 20 20"  >
+                  <path d="M12.522,10.4l-3.559,3.562c-0.172,0.173-0.451,0.176-0.625,0c-0.173-0.173-0.173-0.451,0-0.624l3.248-3.25L8.161,6.662c-0.173-0.173-0.173-0.452,0-0.624c0.172-0.175,0.451-0.175,0.624,0l3.738,3.736C12.695,9.947,12.695,10.228,12.522,10.4 M18.406,10c0,4.644-3.764,8.406-8.406,8.406c-4.644,0-8.406-3.763-8.406-8.406S5.356,1.594,10,1.594C14.643,1.594,18.406,5.356,18.406,10M17.521,10c0-4.148-3.374-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.147,17.521,17.521,14.147,17.521,10"></path>
+              </svg>
+            
+             </div>
+             <div class="job-overview-buttons">
+              <div class="search-buttons level-button">Handshake</div>
+              <div style="margin-left: 15px;" class="search-buttons level-button">Full Duplex</div>
+              
+             </div>
+            </div>
+           </div>
+
+           <div class="job-overview-card">
+            <div (click) ="ShowHttp()" [class.selectedCrad]="showHttp==true" class="job-card overview-card">
+             <div class="overview-wrapper">
+                <img style="width: 50px; height: 30px"  src="assets\httpLogo-removebg-preview.png?raw=true">
+  
+              <div class="overview-detail">
+               <div style="margin-left:15px" class="job-card-title">Http Client</div>
+             
+              </div>
+              <svg style="margin-left: 95px; fill: black; width: 3rem" class="svg-icon" viewBox="0 0 20 20"  >
+                  <path d="M12.522,10.4l-3.559,3.562c-0.172,0.173-0.451,0.176-0.625,0c-0.173-0.173-0.173-0.451,0-0.624l3.248-3.25L8.161,6.662c-0.173-0.173-0.173-0.452,0-0.624c0.172-0.175,0.451-0.175,0.624,0l3.738,3.736C12.695,9.947,12.695,10.228,12.522,10.4 M18.406,10c0,4.644-3.764,8.406-8.406,8.406c-4.644,0-8.406-3.763-8.406-8.406S5.356,1.594,10,1.594C14.643,1.594,18.406,5.356,18.406,10M17.521,10c0-4.148-3.374-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.147,17.521,17.521,14.147,17.521,10"></path>
+              </svg>
+            
+             </div>
+             <div class="job-overview-buttons">
+              <div class="search-buttons level-button">Http Requestes</div>
+              <div style="margin-left: 15px;" class="search-buttons level-button">Status Code</div>
+              
+             </div>
+            </div>
+           </div>
+    
+        
+      
+        </div>
+
+        <ng-template [ngIf] = "showTcp == true">
+
+        <div class="job-explain">
+         <img class="job-bg" src="assets/tcpImage.png" alt="">
+         <div class="job-logos">
+            <img style="width: 50px; height: 50px;"  src="assets\TcpLogo-removebg-preview.png?raw=true">
+
+         </div>
+         <div class="job-explain-content">
+         <div class="job-title-wrapper">
+          <div class="job-card-title">Tcp Client</div>
+          <div class="job-action">
+           
+          </div>
+          </div>
+          <div class="overview-text">
+           <div class="overview-text-header">Overview</div>
+           <div class="overview-text-subheader"> The Transmission Control Protocol (TCP) is one of the most important protocols of Internet Protocols suite. It is most widely used protocol for data transmission in communication network.  TCP is reliable protocol. That is, the receiver always sends either positive or negative acknowledgement about the data packet to the sender, so that the sender always has bright clue about whether the data packet is reached the destination or it needs to resend it.       </div>
+        </div>
+          </div>
+          <div class="overview-text">
+            <div style="margin-left: 25px; margin-top: -30px;" class="overview-text-header">Fill Out Properties</div>
+            
+              <div class="row" style="margin-top: -20px;">
+                <span style="margin-right: 50px;">
+                    <input class="slide-up" id="card" type="text" placeholder="" autocomplete="off"  [(ngModel)]= "TcpClien.Ip"/><label for="card"  >Ip Address</label>
+                  </span>
+                  <span style="margin-left: 50px;">
+                    <input class="slide-up" id="card" type="number" placeholder=""  autocomplete="off"  [(ngModel)]= "TcpClien.port" (change) = "TcpPortNumberChange($event)"/><label for="card" >Port Number</label>
+                  </span>
+                              </div>
+              </div>
+            <div style="margin-left: 25px; margin-top: -30px;" class="overview-text-header">Choose Data Type</div>
+              <section style="text-align: center; margin-left: 28%;" class="app">
+                    <article class="feature1">
+                      <input  type="checkbox" id="feature1" value="0"  (change)="TcpCommunicationTypeCheckBox($event)" />
+                      <div>
+                        <span>
+                         FlightBoxUp
+                        </span>
+                      </div>
+                    </article>
+                    
+                    <article class="feature2">
+                      <input type="checkbox" id="feature2" value="1"  (change)="TcpCommunicationTypeCheckBox($event)" />
+                      <div>
+                        <span>
+                         FlightBoxDown
+                        </span>
+                      </div>
+                    </article>
+                    
+                    <article class="feature3">
+                      <input type="checkbox" id="feature3" value="2"  (change)="TcpCommunicationTypeCheckBox($event)" />
+                      <div>
+                        <span>
+                          FiberBoxUp
+                        </span>
+                      </div>
+                    </article>
+                    <div class="secondRow">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    <article class="feature4">
+                      <input type="checkbox" id="feature4" value="3"  (change)="TcpCommunicationTypeCheckBox($event)" />
+                      <div>
+                        <span>
+                            FiberBoxDown
+                        </span>
+                      </div>
+                    </article>
+                    <article class="feature5">
+                        <input type="checkbox" id="feature5" value="4"  (change)="TcpCommunicationTypeCheckBox($event)" />
+                        <div>
+                          <span>
+                              LandingBox
+                          </span>
+                        </div>
+                      </article>
+                    </div>
+        
+                    </section>   
+                    
+                    <div id="container">
+                        <button  (click) ="startTcpClient()" class="learn-more">
+                          <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                          </span>
+                          <span class="button-text">Connect!</span>
+                        </button>
+                      </div>
+
+         </div>
+        </ng-template>
+
+        <ng-template [ngIf] = "showUdp == true">
+
+            <div class="job-explain">
+             <img class="job-bg" src="assets/udpImage.jpg" alt="">
+             <div class="job-logos">
+                <img style="width: 50px; height: 50px;"  src="assets\UdpLogo.png?raw=true">
+    
+             </div>
+             <div class="job-explain-content">
+             <div class="job-title-wrapper">
+              <div class="job-card-title">Udp Client</div>
+              <div class="job-action">
+               
+              </div>
+              </div>
+              <div class="overview-text">
+               <div class="overview-text-header">Overview</div>
+               <div class="overview-text-subheader">            The User Datagram Protocol (UDP) is simplest Transport Layer communication protocol available of the TCP/IP protocol suite. It involves minimum amount of communication mechanism. In UDP, the receiver does not generate an acknowledgement of packet received and in turn, the sender does not wait for any acknowledgement of packet sent. This shortcoming makes this protocol unreliable as well as easier on processing.    </div>
+            </div>
+              </div>
+              <div class="overview-text">
+                <div style="margin-left: 25px; margin-top: -30px;" class="overview-text-header">Fill Out Properties</div>
+                
+                  <div class="row" style="margin-top: -20px;">
+                    <span style="margin-right: 130px;">
+                      <input autocomplete="off"  class="slide-up" id="name" type="text" placeholder="Enter Ip Address " [(ngModel)]= "UdpClien.Ip" /><label for="name">Ip Address</label>
+                    </span>
+                    <span>
+                      <input autocomplete="off" class="slide-up" id="email" type="number" placeholder="Enter Port Number" [(ngModel)]= "UdpClien.port"  (change) = "UdpPortNumberChange($event)" /><label for="email">Port Number</label>
+                    </span>
+                                  </div>
+                  </div>
+                <div style="margin-left: 25px; margin-top: -30px;" class="overview-text-header">Choose Data Type</div>
+                  <section style="text-align: center; margin-left: 28%;" class="app">
+                        <article class="feature1">
+                          <input  (change)="UdpCommunicationTypeCheckBox($event)" type="checkbox" id="feature1" value="0" />
+                          <div>
+                            <span>
+                             FlightBoxUp
+                            </span>
+                          </div>
+                        </article>
+                        
+                        <article class="feature2">
+                          <input  (change)="UdpCommunicationTypeCheckBox($event)" type="checkbox" id="feature2" value="1"  />
+                          <div>
+                            <span>
+                             FlightBoxDown
+                            </span>
+                          </div>
+                        </article>
+                        
+                        <article class="feature3">
+                          <input  (change)="UdpCommunicationTypeCheckBox($event)" type="checkbox" id="feature3" value="2"  />
+                          <div>
+                            <span>
+                              FiberBoxUp
+                            </span>
+                          </div>
+                        </article>
+                        <div class="secondRow">
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        <article class="feature4">
+                          <input  (change)="UdpCommunicationTypeCheckBox($event)" type="checkbox" id="feature4" value="3"  />
+                          <div>
+                            <span>
+                                FiberBoxDown
+                            </span>
+                          </div>
+                        </article>
+                        <article class="feature5">
+                            <input  (change)="UdpCommunicationTypeCheckBox($event)" type="checkbox" id="feature5" value="4"  />
+                            <div>
+                              <span>
+                                  LandingBox
+                              </span>
+                            </div>
+                          </article>
+                        </div>
+            
+                        </section>  
+                        <div id="container">
+                            <button  (click) =" startUdpClient()" class="learn-more">
+                              <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                              </span>
+                              <span class="button-text">Connect!</span>
+                            </button>
+                          </div>  
+             </div>
+            </ng-template>
+
+            <ng-template [ngIf] = "showMongo == true">
+
+                <div class="job-explain">
+                 <img class="job-bg" src="assets/mongodbImage.png" alt="">
+                 <div class="job-logos">
+                    <img style="width: 50px; height: 50px;" src="assets\mongoLogo-removebg-preview.png?raw=true">
+        
+                 </div>
+                 <div class="job-explain-content">
+                 <div class="job-title-wrapper">
+                  <div class="job-card-title">MongoDB Client</div>
+                  <div class="job-action">
+                   
+                  </div>
+                  </div>
+                  <div class="overview-text">
+                   <div class="overview-text-header">Overview</div>
+                   <div class="overview-text-subheader"> MongoDB is a scalable, flexible NoSQL document database platform designed to overcome the relational databases approach and the limitations of other NoSQL solutions. MongoDB is well known for its horizontal scaling and load balancing capabilities, which has given application developers an unprecedented level of flexibility and scalability.
+                </div>
+                </div>
+                  </div>
+                  <div class="overview-text">
+                    <div style="margin-left: 25px; margin-top: -30px;" class="overview-text-header">Fill Out Properties</div>
+                    
+                      <div class="row" style="margin-top: -20px;">
+                        <span style="margin-right: 50px;">
+                            <input autocomplete="off" class="slide-up" id="card" type="text" placeholder=""  [(ngModel)]= "MongoclientProps.Ip"/><label for="card" >Ip Address</label>
+                          </span>
+                          <span style="margin-left: 50px;">
+                            <input autocomplete="off" class="slide-up" id="card" type="number" placeholder="" [(ngModel)]= "MongoclientProps.port" (change) = "MongdbPortNumberChange($event)"/><label for="card" >Port Number</label>
+                          </span>
+                                      </div>
+                                     
+                                      <div class="row" style="margin-top: -50px;">
+                                        <span  style="margin-right: 110px;">
+                                          <input autocomplete="off" style="float: left;" class="slide-up" id="db" type="text" [(ngModel)]= "MongoclientProps.DataBaseName"/><label for="db">DataBase Name</label>
+                                        </span>
+                                    
+                                        <span style="margin-left:-5px">
+                                          <input autocomplete="off" style="float: right; " type="text" class="slide-up" id="collection" type="text"  [(ngModel)]= "MongoclientProps.CollectionName" /><label for="collection">Collection Name</label>
+                                        </span>
+
+                                        </div>
+                      </div>
+                    <div style="margin-left: 25px; margin-top: -30px;" class="overview-text-header">Choose Data Type</div>
+                      <section style="text-align: center; margin-left: 28%;" class="app">
+                            <article class="feature1">
+                              <input type="checkbox" id="feature1" value="0"  (change)="MongoCommunicationTypeCheckBox($event)"/>
+                              <div>
+                                <span>
+                                 FlightBoxUp
+                                </span>
+                              </div>
+                            </article>
+                            
+                            <article class="feature2">
+                              <input type="checkbox" id="feature2" value="1"  (change)="MongoCommunicationTypeCheckBox($event)" />
+                              <div>
+                                <span>
+                                 FlightBoxDown
+                                </span>
+                              </div>
+                            </article>
+                            
+                            <article class="feature3">
+                              <input type="checkbox" id="feature3" value="2"  (change)="MongoCommunicationTypeCheckBox($event)" />
+                              <div>
+                                <span>
+                                  FiberBoxUp
+                                </span>
+                              </div>
+                            </article>
+                            <div class="secondRow">
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            <article class="feature4">
+                              <input type="checkbox" id="feature4" value="3"  (change)="MongoCommunicationTypeCheckBox($event)" />
+                              <div>
+                                <span>
+                                    FiberBoxDown
+                                </span>
+                              </div>
+                            </article>
+                            <article class="feature5">
+                                <input type="checkbox" id="feature5" value="4"  (change)="MongoCommunicationTypeCheckBox($event)" />
+                                <div>
+                                  <span>
+                                      LandingBox
+                                  </span>
+                                </div>
+                              </article>
+                            </div>
+                
+                            </section>   
+                            <div id="container">
+                                <button (click) ="startMongoClient()" class="learn-more">
+                                  <span class="circle" aria-hidden="true">
+                                    <span class="icon arrow"></span>
+                                  </span>
+                                  <span class="button-text">Connect!</span>
+                                </button>
+                              </div> 
+                              <br>
+                              <br>
+                 </div>
+                </ng-template>
+
+                <ng-template [ngIf] = "showSplunk == true">
+
+                    <div class="job-explain">
+                     <img class="job-bg" src="assets/splunkImage.jpg" alt="">
+                     <div class="job-logos">
+                        <img style="width: 60px; height: 60px;"  src="assets\SplunkLogo-removebg-preview.png?raw=true">
+            
+                     </div>
+                     <div class="job-explain-content">
+                     <div class="job-title-wrapper">
+                      <div class="job-card-title">Splunk Client</div>
+                      <div class="job-action">
+                       
+                      </div>
+                      </div>
+                      <div class="overview-text">
+                       <div class="overview-text-header">Overview</div>
+                       <div class="overview-text-subheader">   Splunk is a software which processes and brings out insight from machine data and other forms of big data. it allows to search, tag, create reports and dashboards. it can also analyze any structured or semi-structured data with proper data modelling. It has built-in features to recognize the data types, field separators and optimize the search processes. It also provides data visualization on the search results.
+                    </div>
+                    </div>
+                      </div>
+                      <div class="overview-text">
+                        <div style="margin-left: 25px; margin-top: -30px;" class="overview-text-header">Fill Out Properties</div>
+                        
+                          <div class="row" style="margin-top: -20px;">
+                            <span style="margin-right: 50px;">
+                                <input autocomplete="off" class="slide-up" id="card" type="text" placeholder=""  [(ngModel)]= "SplunkClient.Ip" /><label for="card">Ip Address</label>
+                              </span>
+                              <span style="margin-left: 50px;">
+                                <input autocomplete="off" class="slide-up" id="card" type="number" placeholder="" [(ngModel)]= "SplunkClient.port" (change) = "SplunkPortNumberChange($event)" /><label for="card">Port Number</label>
+                              </span>
+                                          </div>
+                                         
+                                          <div class="row" style="margin-top: -50px;">
+                                            <span style="margin-right: 100px;">
+                                              <input  class="basic-slide" id="db" type="text" placeholder="Enter Token String "  [(ngModel)]= "SplunkClient.HttpEventCollectorToken" /><label for="db">HttpEvent Token</label>
+                                            </span>
+                                           
+                                                          </div>
+                          </div>
+                        <div style="margin-left: 25px; margin-top: -30px;" class="overview-text-header">Choose Data Type</div>
+                          <section style="text-align: center; margin-left: 28%;" class="app">
+                                <article class="feature1">
+                                  <input type="checkbox" id="feature1" value="0" (change)="SplunkCommunicationTypeCheckBox($event)"/>
+                                  <div>
+                                    <span>
+                                     FlightBoxUp
+                                    </span>
+                                  </div>
+                                </article>
+                                
+                                <article class="feature2">
+                                  <input type="checkbox" id="feature2" value="1"  (change)="SplunkCommunicationTypeCheckBox($event)"/>
+                                  <div>
+                                    <span>
+                                     FlightBoxDown
+                                    </span>
+                                  </div>
+                                </article>
+                                
+                                <article class="feature3">
+                                  <input type="checkbox" id="feature3" value="2" (change)="SplunkCommunicationTypeCheckBox($event)" />
+                                  <div>
+                                    <span>
+                                      FiberBoxUp
+                                    </span>
+                                  </div>
+                                </article>
+                                <div class="secondRow">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                <article class="feature4">
+                                  <input type="checkbox" id="feature4" value="3" (change)="SplunkCommunicationTypeCheckBox($event)" />
+                                  <div>
+                                    <span>
+                                        FiberBoxDown
+                                    </span>
+                                  </div>
+                                </article>
+                                <article class="feature5">
+                                    <input type="checkbox" id="feature5" value="4" (change)="SplunkCommunicationTypeCheckBox($event)" />
+                                    <div>
+                                      <span>
+                                          LandingBox
+                                      </span>
+                                    </div>
+                                  </article>
+                                </div>
+                    
+                                </section>    
+                                
+                                <div  id="container">
+                                    <button  (click) ="startSplunkClient()" class="learn-more">
+                                      <span class="circle" aria-hidden="true">
+                                        <span class="icon arrow"></span>
+                                      </span>
+                                      <span class="button-text">Connect!</span>
+                                    </button>
+                                  </div>
+                                  <br>
+                                <br>
+                     </div>
+                    </ng-template>
+
+                    <ng-template [ngIf] = "showWebSocket == true">
+
+                        <div class="job-explain">
+                         <img class="job-bg" src="assets/webSocketImage.jpeg" alt="">
+                         <div class="job-logos">
+                            <img style="width: 90px; height: 60px;"  src="assets\WebSocketLogo-removebg-preview.png?raw=true">
+                
+                         </div>
+                         <div class="job-explain-content">
+                         <div class="job-title-wrapper">
+                          <div class="job-card-title">Web Socket Client</div>
+                          <div class="job-action">
+                           
+                          </div>
+                          </div>
+                          <div class="overview-text">
+                           <div class="overview-text-header">Overview</div>
+                           <div class="overview-text-subheader">    The WebSocket Protocol is a widely supported open standard for developing real-time applications. Web sockets are defined as a two-way communication between the servers and the clients. This protocol defines a full duplex communication from the ground up. Web sockets take a step forward in bringing desktop rich functionalities to the web browsers.
+                        </div>
+                        </div>
+                          </div>
+                          <div class="overview-text">
+                            <div style="margin-left: 25px; margin-top: -30px;" class="overview-text-header">Fill Out Properties</div>
+                            
+                              <div class="row" style="margin-top: -20px;">
+                                <span autocomplete="off" style="margin-right: 50px;">
+                                    <input class="slide-up" id="card" type="text" placeholder=""  [(ngModel)]= "WebSocketClient.Ip"/><label for="card">Ip Address</label>
+                                  </span>
+                                  <span autocomplete="off" style="margin-left: 50px;">
+                                    <input class="slide-up" id="card" type="number" placeholder="" (change) = "WebSocketPortNumberChange($event)" /><label for="card">Port Number</label>
+                                  </span>
+                                              </div>
+                                             
+                                              <div class="row" style="margin-top: -50px;">
+                                                
+                                               
+                                                              </div>
+                              </div>
+                            <div style="margin-left: 25px; margin-top: -30px;" class="overview-text-header">Choose Data Type</div>
+                              <section style="text-align: center; margin-left: 28%;" class="app">
+                                    <article class="feature1">
+                                      <input type="checkbox" id="feature1" value="0" (change)="WebSocketCommunicationTypeCheckBox($event)"/>
+                                      <div>
+                                        <span>
+                                         FlightBoxUp
+                                        </span>
+                                      </div>
+                                    </article>
+                                    
+                                    <article class="feature2">
+                                      <input type="checkbox" id="feature2" value="1" (change)="WebSocketCommunicationTypeCheckBox($event)" />
+                                      <div>
+                                        <span>
+                                         FlightBoxDown
+                                        </span>
+                                      </div>
+                                    </article>
+                                    
+                                    <article class="feature3">
+                                      <input type="checkbox" id="feature3" value="2"  (change)="WebSocketCommunicationTypeCheckBox($event)"/>
+                                      <div>
+                                        <span>
+                                          FiberBoxUp
+                                        </span>
+                                      </div>
+                                    </article>
+                                    <div class="secondRow">
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                    <article class="feature4">
+                                      <input type="checkbox" id="feature4" value="3" (change)="WebSocketCommunicationTypeCheckBox($event)" />
+                                      <div>
+                                        <span>
+                                            FiberBoxDown
+                                        </span>
+                                      </div>
+                                    </article>
+                                    <article class="feature5">
+                                        <input type="checkbox" id="feature5" value="4" (change)="WebSocketCommunicationTypeCheckBox($event)" />
+                                        <div>
+                                          <span>
+                                              LandingBox
+                                          </span>
+                                        </div>
+                                      </article>
+                                    </div>
+                        
+                                    </section>    
+                                    <div id="container">
+                                        <button  (click) ="startWebSocketClient()" class="learn-more">
+                                          <span class="circle" aria-hidden="true">
+                                            <span class="icon arrow"></span>
+                                          </span>
+                                          <span class="button-text">Connect!</span>
+                                        </button>
+                                      </div>
+                         </div>
+                        </ng-template>
+
+                        <ng-template [ngIf] = "showHttp == true">
+
+                            <div class="job-explain">
+                             <img class="job-bg" src="assets/httpImage.jpg" alt="">
+                             <div class="job-logos">
+                                <img style="width: 50px; height: 30px"  src="assets\httpLogo-removebg-preview.png?raw=true">
+                    
+                             </div>
+                             <div class="job-explain-content">
+                             <div class="job-title-wrapper">
+                              <div class="job-card-title">Http Client</div>
+                              <div class="job-action">
+                               
+                              </div>
+                              </div>
+                              <div class="overview-text">
+                               <div class="overview-text-header">Overview</div>
+                               <div class="overview-text-subheader">  The Hypertext Transfer Protocol (HTTP) is an application-level protocol for information systems. This is the foundation for data communication for the World Wide Web.   HTTP is a generic and stateless protocol which can be used for other purposes as well using extensions of its request methods, error codes, and headers.
+                            </div>
+                            </div>
+                              </div>
+                              <div class="overview-text">
+                                <div style="margin-left: 25px; margin-top: -30px;" class="overview-text-header">Fill Out Properties</div>
+                                
+                                  <div class="row" style="margin-top: -20px;">
+                                    <span style="margin-right: 50px;">
+                                        <input autocomplete="off" class="slide-up" id="card" type="text" placeholder=""  [(ngModel)]= "HttpClientProps.Ip"/><label for="card">Ip Address</label>
+                                      </span>
+                                      <span style="margin-left: 50px;">
+                                        <input autocomplete="off" class="slide-up" id="card" type="number" placeholder="" [(ngModel)]= "HttpClientProps.port"  (change) = "HttpPortNumberChange($event)"/><label for="card">Port Number</label>
+                                      </span>
+                                                  </div>
+                                                 
+                                                  <div class="row" style="margin-top: -50px;">
+                                                    
+                                                   
+                                                                  </div>
+                                  </div>
+                                <div style="margin-left: 25px; margin-top: -30px;" class="overview-text-header">Choose Data Type</div>
+                                  <section style="text-align: center; margin-left: 28%;" class="app">
+                                        <article class="feature1">
+                                          <input type="checkbox" id="feature1" value="0"  (change)="HttpCommunicationTypeCheckBox($event)"/>
+                                          <div>
+                                            <span>
+                                             FlightBoxUp
+                                            </span>
+                                          </div>
+                                        </article>
+                                        
+                                        <article class="feature2">
+                                          <input type="checkbox" id="feature2" value="1"  (change)="HttpCommunicationTypeCheckBox($event)" />
+                                          <div>
+                                            <span>
+                                             FlightBoxDown
+                                            </span>
+                                          </div>
+                                        </article>
+                                        
+                                        <article class="feature3">
+                                          <input type="checkbox" id="feature3" value="2"  (change)="HttpCommunicationTypeCheckBox($event)" />
+                                          <div>
+                                            <span>
+                                              FiberBoxUp
+                                            </span>
+                                          </div>
+                                        </article>
+                                        <div class="secondRow">
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                        <article class="feature4">
+                                          <input type="checkbox" id="feature4" value="3"  (change)="HttpCommunicationTypeCheckBox($event)" />
+                                          <div>
+                                            <span>
+                                                FiberBoxDown
+                                            </span>
+                                          </div>
+                                        </article>
+                                        <article class="feature5">
+                                            <input type="checkbox" id="feature5" value="4"  (change)="HttpCommunicationTypeCheckBox($event)" />
+                                            <div>
+                                              <span>
+                                                  LandingBox
+                                              </span>
+                                            </div>
+                                          </article>
+                                        </div>
+                            
+                                        </section>  
+                                        <div id="container">
+                                            <button (click) ="startHttpClient()" class="learn-more">
+                                              <span class="circle" aria-hidden="true">
+                                                <span class="icon arrow"></span>
+                                              </span>
+                                              <span class="button-text">Connect!</span>
+                                            </button>
+                                          </div>  
+                             </div>
+                            </ng-template>
+                    
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>

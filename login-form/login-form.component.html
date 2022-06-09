@@ -1,0 +1,60 @@
+<section style="background: linear-gradient(180deg, #171717, #171717); min-height: 100%;" class="clear">
+
+    <div id="userlogin" class="withmargins">
+     <div class="left">
+      <form style="color: white;" action="" class="content">
+       <h2>Hello User!</h2>
+       <p> Sign in or sign up to use the controller, it just takes a second.</p>
+       <div class="inputLabel">
+            <span style="margin-left: 5px;"> Username </span>
+       </div>
+       <label style="margin-top: 5px;" class="fill top" for="username">
+       <input  [(ngModel)]= "userName" (change) = "userNameChange($event)" type="text" name="username" id="username">
+      </label>
+       <div class="inputLabel">
+        <span style="margin-left: 5px;"> Password </span>
+   </div>
+       <label  style="margin-top: 5px;" class="fill bottom" for="password">
+        <input  [(ngModel)]= "passwd" (change) = "passwdNameChange($event)" type="text" name="password" id="password"></label>
+       <div class="notes">
+       </div>
+   
+       <div class="submit">
+        <label for="login"><input (click) = "signIn()" type="submit" value="Sign in" id="login" ></label>
+        <label for="signup"><input (click) = "submitProperties()" type="submit" value="sign up" id="signup"></label>
+       </div>
+   
+      </form>
+     </div>
+     <div class="right">
+      <div class="slider">
+   
+       <div class="slide">
+        <div class="slide-img-bg">					<img src="assets/login.jfif"> </div>
+
+       
+        <div class="slide-title">
+         <h3 style="margin-right: 280px;">Login</h3>
+        </div>
+        <div class="slide-description">
+         <p style="font-size: 16px;">Enter Your Username And Password In Order To Get Access To Kafka Producer And Clients </p>
+         <p style="font-size: 16px; margin-right: 295px;">           Controller Or Sign In To Get Regular User  Abilities
+        </p>
+        </div>
+        <div class="slide-img-content">		<img src="assets/Bamza_108.png"></div>
+       </div>
+      </div>
+     </div>
+   
+    </div>
+   
+   </section>
+   
+   <div class="forgotmodal">
+     <a href="" id="closemodal">close</a>
+     <p>Insert your email</p>
+     <label for="emailforgot"><input name="emailforgot" type="email" placeholder="email" id="emailforgot"></label>
+     <p class="info">Email not associated with any user.</p>
+    <p class="info pos">Reset instructions sent to email.</p>
+     <a id="requestpwd" class="btn">Request reset</a>
+   </div>

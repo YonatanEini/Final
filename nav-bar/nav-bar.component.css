@@ -1,0 +1,32 @@
+aside{
+  background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.dropdown{
+  background:#121212 ;
+    position: relative;
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  border: black 2px solid;
+  max-width: 100%;
+  max-height: 100%;
+  color: rgba(255, 255, 255, 0.658);
+}
+.dropdown-content{
+  max-width: 100%;
+  max-height: 100%;
+  margin-left: 5px;
+  margin-bottom: 10%;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.title-design{
+  font-size: clamp(1.2rem,calc(1rem + 3.5vw),1.5rem);
+  text-shadow: 0 1px 1px rgb(0 0 0 / 50%);
+}

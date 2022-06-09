@@ -1,0 +1,590 @@
+
+:root {
+  --color-light: white;
+  --color-dark: #212121;
+  --color-signal: #fab700;
+  
+  --color-background: var(--color-light);
+  --color-text: var(--color-dark);
+  --color-accent: var(--color-signal);
+  
+  --size-bezel: .5rem;
+  --size-radius: 4px;
+  
+  line-height: 1.4;
+  
+  font-family: 'Inter', sans-serif;
+  font-size: calc(.6rem + .4vw);
+  color: var(--color-text);
+  background: var(--color-background);
+  font-weight: 300;
+  padding: 0 calc(var(--size-bezel) * 3);
+}
+h1{
+  background-color: transparent;
+  text-align: center;
+}
+.card-container{
+  margin-left: 15px;
+}
+body {
+  background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.title{
+  width:100%;
+  text-align: center;
+}
+.title h1{
+  font-size:50px;
+  font-family: 'Exo', sans-serif;
+}
+.MongoDBcard {
+  text-align:center;
+  position: absolute;
+  left: 20%;
+  width: 250px;
+  height: 350px;
+  margin-top: 15%;
+  background-color: #63d471;
+  background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
+  transition:.6s;
+  transform: rotatex(35deg) translatey(-200px) translatez(-100px);
+  box-shadow: 0px 20px 60px rgba(0,0,0, 0.5);
+  margin-right: 15px;
+  animation-name: ShowFromLeft;
+  animation-duration: 1s;
+}
+.MongoDBcard:hover{
+  cursor: pointer;
+  box-shadow: 0px 20px 100px -3px white;
+  transform: rotatex(25deg) translatey(-200px) translatez(-100px);
+  transition: 1s;
+}
+
+.MongoDBcard img{
+  transform: translateY(15px);
+  width:200px;
+  height:120px;
+  background-color: transparent;
+}
+h3{
+  font-size:25px;
+  font-family: 'Palatino', sans-serif;
+  color:rgb(255,255,255);
+  text-shadow: 0 0 2px rgb(255,255,255);
+  transform: translatey(10px);
+}
+p{
+  font-family: 'Palatino', sans-serif;
+  color: white;
+  transform: translatex(12px);
+  text-align:center;
+  width: auto;
+}
+label{
+  visibility: hidden;
+}
+input{
+  visibility: hidden;
+}
+.UdpCard {
+  text-align:center;
+  position: absolute;
+  left: 40%;
+  width: 260px;
+  height: 350px;
+  margin-top: 15%;
+  transition:.6s;
+  transform: rotatex(35deg) translatey(-200px) translatez(-100px);
+  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5);
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #958e69 74%);
+  animation-name: FromTop;
+  animation-duration: 1s;
+}
+
+.UdpCard:hover{
+  cursor: pointer;
+  box-shadow: 0px 20px 100px -3px white;
+  transform: rotatex(25deg) translatey(-200px) translatez(-100px);
+  transition: 1s;
+}
+.UdpCard img{
+  margin-top: -25px;
+  transform: translateY(15px);
+  width:180px;
+  height:150px;
+}
+.UdpCard h3{
+  margin-top: -15px;
+}
+.card3 h3{
+  margin-top: 10px;  
+}
+.MongoDBcard h3{
+  margin-top: -15px;
+}
+.card3 {
+  text-align:center;
+  position: absolute;
+  right: 24%;
+  top: 8%;
+  width: 250px;
+  height: 350px;
+  background: linear-gradient(#ff5252, #b33939);
+  transition:.6s;
+  transform: rotatex(35deg) translatey(-200px) translatez(-100px);
+  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5);
+  animation: FromTop 1s forwards;
+}
+.card3:hover{
+  cursor: pointer;
+  box-shadow: 0px 20px 100px -3px white;
+  transform: rotatex(25deg) translatey(-200px) translatez(-100px);
+  transition: 1s;
+}
+.card3 img{
+  transform: translateY(15px);
+  width:200px;
+  height:120px;
+}
+.footer{
+  position: absolute;
+  top: 500px;
+  margin: 10px;
+  width: 100%;
+   text-align: center;
+}
+.footer h2{
+  font-size:18px;
+  font-family: 'Exo', sans-serif;
+  
+}
+.MongoDBcard .icon{
+  margin-top: 30px;
+}
+.icon{
+  background: transparent; 
+  border: none;
+  outline:none;
+  cursor:pointer;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  color: white;
+  font-size: 25px;
+  transition: 1s;
+  margin-bottom: 0px;
+}
+.card3 .icon{
+  margin-top: 25px;
+}
+.UdpCard .icon{
+  margin-top: 25px;
+}
+.text-center{
+	color:#fff;	
+	text-transform:uppercase;
+    font-size: 23px;
+    margin: -50px 0 80px 0;
+    display: block;
+    text-align: center;
+}
+.box{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.89);
+	border-radius:3px;
+	padding:70px 100px;
+}
+.FormContainer{
+  margin-top: -400px;
+  transition-delay: 1.5s;
+}
+
+.input-container{
+	position:relative;
+  margin-bottom: 25px;
+}
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#fff;	
+	transition: all 0.5s ease-in-out;
+}
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
+}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #e74c3c;	
+ transition: 0.5s;
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+  transition: 0.5s;
+	font-size:12px;
+  top: -15px;
+}
+@keyframes UpTheLable {
+  from {top: 0px;}
+  to {top: -15px;}
+  from {font-size: 16px;}
+  to {font-size: 12px;}
+}
+@keyframes ShowFromLeft {
+  from {left: 0%;}
+  to {left: 20%;}
+}
+@keyframes ShowFromRight {
+  from {left: 100%;}
+  to {left: 40%;}
+}
+@keyframes FromTop {
+  from {margin-top: -15%;}
+  to {margin-top: 15%;}
+}
+
+
+.UdpCard:hover article{
+  visibility: visible;
+  transition-delay: 2.5s;
+}
+.card3:hover article{
+  visibility: visible;
+  transition-delay: 2.5s;
+}
+article {
+  visibility: hidden;
+  position: relative;
+  width: 100px;
+  height: 50px;
+  margin: 5px;
+  margin-bottom: 5px;
+  float: left;
+  border: 2px solid #50bcf2;
+  box-sizing: border-box;
+}
+article div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 25px;
+  transition: .5s ease;
+}
+
+article input {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 50px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked ~ div {
+  background-color: #50bcf2;
+}
+.blue-color {
+  color: #50bcf2;
+}
+
+.gray-color {
+  color: #555;
+}
+
+.second-row{
+  margin-left: 15%;
+}
+.UdpCard:hover .form-containers{
+  margin-top: -290px;
+}
+.card3:hover .form-containers{
+  margin-top: -295px;
+}
+.check-box{
+ margin-left: 10px;
+ top: 35%;
+}
+.save-button {
+  margin-top: 20px;
+  background: #fff;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  transition: 0.5s;
+  margin-left: 42%;
+  margin-top: 35%;
+  animation-name: FromRightAnimation;
+  animation-duration: 1s;
+}
+.save-button:hover {
+  opacity: 0.6;
+  border: white 2px solid;
+  transform: translateY(-2px);
+}
+.save-button:active {
+  transform: translateY(1px);
+
+}
+.UdpCard:hover ~ .save-button{
+  display: none;
+}
+.card3:hover ~ .save-button{
+  display: none;
+}
+@keyframes FromRightAnimation {
+  from {margin-left: 80%;}
+  to {margin-left: 42%;}
+}
+.data-holder{
+  transition: 1.5s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  height: 500px;
+  width: 345px;
+  border: white 4px solid;
+  transition:ease-out 1s;
+  margin-left: 35%;
+  margin-top: -24%;
+  cursor: pointer;
+  transition-delay: 0.5s;
+  animation-name: ChangeWidth;
+  animation-duration: 1s;
+  background-color: #63d471;
+  background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
+}
+.data-holder article{
+  visibility: visible;
+  animation: cssAnimation 2s forwards;
+} 
+.data-holder label{
+  visibility: visible;
+  transition-delay: 2.5s;
+  transition-duration: 0.5s;
+  text-align: center;
+  margin-left: 15px;
+  animation: cssAnimation 2s forwards;
+
+ }
+ .data-holder input{
+   visibility: visible;
+   animation: cssAnimation 1.8s ;
+   text-align:  center;
+ }
+ 
+ .data-holder p{
+   visibility: hidden;
+   transition-duration: 0.5s;
+   transition-delay: 2s;
+ }
+ .data-holder h3{
+   visibility: visible;
+   transition-duration: 0.5s;
+   transition-delay: 2s;
+   margin-top: -20px;
+   animation: cssAnimation 1s;
+
+ }
+ .data-holder .FormContainer{ 
+    margin-top: 50px;
+ }
+ .data-holder .icon{
+  margin-left: 28px;
+  margin-top: 5px;
+  animation: cssAnimation 2s forwards;
+}
+
+.data-holder .exit_Btn{
+  margin-left: 305px;
+  font-size: 53px;
+  cursor: pointer;
+  background-color: transparent;
+  color: transparent;
+  animation: cssAnimation 2s forwards;
+}
+mat-icon:hover{
+  cursor: pointer;
+  color: red;
+  background-color: transparent;
+}
+@keyframes ChangeWidth {
+  from {margin-left: 20%}
+  to {margin-left: 35%;}
+  from {height: 0px;}
+  to {height: 500px;}
+  from {width: 0px;}
+  to {width: 340px;}
+}
+@keyframes ChangeVisible {
+  from {visibility:visible}
+  to {visibility: hidden;}
+}
+@keyframes cssAnimation {
+
+  0%   {opacity: 0;}
+  90%  {opacity: 0;}
+  100% {opacity: 1;}
+}
+@keyframes UdpChangeWidth {
+
+  from {height: 0px;}
+  to {height: 400px;}
+  from {width: 0px;}
+  to {width: 340px;}
+}
+@keyframes HttpChangeWidth {
+  from {margin-left: 75%}
+  to {margin-left: 35%;}
+  from {height: 0px;}
+  to {height: 400px;}
+  from {width: 0px;}
+  to {width: 340px;}
+}
+ .udp-data-holder{
+  transition: 1.5s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  height: 400px;
+  width: 345px;
+  border: white 4px solid;
+  transition:ease-out 1s;
+  margin-left: 35%;
+  margin-top: -25%;
+  cursor: pointer;
+  transition-delay: 0.5s;
+  animation-name: UdpChangeWidth;
+  animation-duration: 1s;
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #958e69 74%);
+ }
+
+ .udp-data-holder article{
+  visibility: visible;
+  animation: cssAnimation 2s forwards;
+} 
+.udp-data-holder label{
+  visibility: visible;
+  transition-delay: 2.5s;
+  transition-duration: 0.5s;
+  text-align: center;
+  margin-left: 15px;
+  animation: cssAnimation 2s forwards;
+
+ }
+ .udp-data-holder input{
+   visibility: visible;
+   animation: cssAnimation 1.8s ;
+   text-align:  center;
+ }
+ 
+ .udp-data-holder p{
+   visibility: hidden;
+   transition-duration: 0.5s;
+   transition-delay: 2s;
+ }
+ .udp-data-holder h3{
+   visibility: visible;
+   transition-duration: 0.5s;
+   transition-delay: 2s;
+   animation: cssAnimation 1s forwards;
+   margin-top: -25px;
+
+ }
+ .udp-data-holder .FormContainer{ 
+    margin-top: 60px;
+ }
+
+.udp-data-holder #number_label{
+  animation: cssAnimation 2s forwards;
+}
+.udp-data-holder .udp-data-holderBtn{
+ margin-top: 135px;
+ animation: cssAnimation 2s forwards;
+}
+.udp-data-holder .exit_Btn{
+  margin-left: 305px;
+  animation: cssAnimation 1.8s ;
+}
+.http-data-holder{
+  transition: 1.5s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  height: 400px;
+  width: 345px;
+  border: white 4px solid;
+  transition:ease-out 1s;
+  margin-left: 35%;
+  margin-top: -24%;
+  cursor: pointer;
+  transition-delay: 0.5s;
+  animation-name: HttpChangeWidth;
+  animation-duration: 1s;
+  background: linear-gradient(#ff5252, #b33939);
+
+ }
+
+ .http-data-holder article{
+  visibility: visible;
+  animation: cssAnimation 2s forwards;
+} 
+.http-data-holder label{
+  visibility: visible;
+  transition-delay: 2.5s;
+  transition-duration: 0.5s;
+  text-align: center;
+  margin-left: 15px;
+  animation: cssAnimation 2s forwards;
+
+ }
+ .http-data-holder input{
+   visibility: visible;
+   animation: cssAnimation 1.8s ;
+   text-align:  center;
+ }
+ 
+ .http-data-holder p{
+   visibility: hidden;
+   transition-duration: 0.5s;
+   transition-delay: 2s;
+ }
+ .http-data-holder h3{
+   visibility: visible;
+   transition-duration: 0.5s;
+   transition-delay: 2s;
+   animation: cssAnimation 1s forwards;
+   margin-top: -25px;
+ }
+ .http-data-holder .FormContainer{ 
+    margin-top: 60px;
+ }
+
+ .http-data-holder #number_label{
+  animation: cssAnimation 2s forwards;
+}
+.http-data-holder .http-data-holderBtn{
+ margin-top: 135px;
+ animation: cssAnimation 2s forwards;
+}
+.http-data-holder  .exit_Btn{
+  margin-left: 305px;
+  animation: cssAnimation 1.8s ;
+}
